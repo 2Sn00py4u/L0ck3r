@@ -3,7 +3,7 @@
     "name": "L0CK3R",
     "version": "1.0",
     "description": "Secure Password-Manager",
-    "permissions": ["activeTab"],
+    "permissions": ["nativeMessaging"],
     "action": {
       "default_popup": "html/login.html",
       "default_icon": {
