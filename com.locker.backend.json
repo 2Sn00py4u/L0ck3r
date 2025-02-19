@@ -1,9 +1,0 @@
-{
-    "name": "com.locker.backend",
-    "description": "Backend script for extension",
-    "path": "C:/Users/Felix/Desktop/coolStuff/browser/extensions/L0ck3r/backend/backend-handler.py",
-    "type": "stdio",
-    "allowed_origins": ["chrome-extension://cdhibdkkoigpoelgckoehpajhloofpfl"]
-}
-
-

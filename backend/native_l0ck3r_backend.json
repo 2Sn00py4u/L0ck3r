@@ -1,0 +1,7 @@
+{
+    "name": "com.native.locker",
+    "description": "Password-Manager",
+    "path": "nativeTest.bat",
+    "type": "stdio",
+    "allowed_origins": ["chrome-extension://cdhibdkkoigpoelgckoehpajhloofpfl/"]
+}
