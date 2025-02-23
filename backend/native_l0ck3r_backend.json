@@ -1,7 +1,7 @@
 {
     "name": "com.native.locker",
-    "description": "Password-Manager",
-    "path": "nativeTest.bat",
+    "description": "Password-Manager-Backend",
+    "path": "backend-handler.py",
     "type": "stdio",
     "allowed_origins": ["chrome-extension://cdhibdkkoigpoelgckoehpajhloofpfl/"]
 }
