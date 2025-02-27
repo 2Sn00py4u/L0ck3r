@@ -11,14 +11,18 @@ registerButton.addEventListener("click", function () {
     var passwd = passwdInput.value;
     // connect via port
     port = chrome.runtime.connectNative('com.native.locker');
-    alert("connected")
-    port.postMessage({text: 'Hello from register', uname: uname, passwd: passwd});
+    var registerRequest = {
+        requestType: "registerRequest",
+        uname: uname,
+        passwd: passwd
+    }
+    port.postMessage(registerRequest);
     
     // wait for the response asynchronously using a Promise
     recvMessage().then(response => {
         alert(response.response); // alert the response
     }).catch(error => {
-        console.error('Error receiving message:', error);
+        alert('Error receiving response:', error);
     });
     
     // listening for disconnect

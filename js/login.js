@@ -11,14 +11,18 @@ loginButton.addEventListener("click", function () {
     var passwd = passwdInput.value;
     // connect via port
     port = chrome.runtime.connectNative('com.native.locker');
-    alert("connected")
-    port.postMessage({text: 'Hello from login', uname: uname, passwd: passwd});
+    var loginRequest = {
+        requestType: "loginRequest",
+        uname: uname,
+        passwd: passwd
+    }
+    port.postMessage(loginRequest);
     
     // wait for the response asynchronously using a Promise
     recvMessage().then(response => {
         alert(response.response); // alert the response
     }).catch(error => {
-        console.error('Error receiving message:', error);
+        alert('Error receiving message:', error);
     });
     
     // listening for disconnect
