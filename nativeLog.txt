@@ -1,0 +1,10 @@
+start test
+Hello from login
+uname:test
+passwd:test
+start sending message.. {'response': ['test', 'test']}
+json message: {"response": ["test", "test"]}
+encoded message: b'{"response": ["test", "test"]}'
+length encoded message: 30
+send {'response': ['test', 'test']}
+succesfully send: test - test

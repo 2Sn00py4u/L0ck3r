@@ -1,39 +1,40 @@
 import sys
 import json
 
-def read_message():
-    # Read the length of the message
-    message_length = sys.stdin.buffer.read(4)
-    message_length = int.from_bytes(message_length, byteorder='big')
+def logging(log:str, mode:str):
+    with open("C:\\Users\\Felix\\Desktop\\coolStuff\\browser\\extensions\\L0ck3r\\nativeLog.txt", mode) as file:
+            file.write(log)
+            file.close()
 
-    # Read the message based on the length
+def receiveMessage():
+    message_length = sys.stdin.buffer.read(4)  #  reading length of message in first 4 bytes
+    message_length = int.from_bytes(message_length, byteorder='little')
+    
     message = sys.stdin.buffer.read(message_length)
-
     return json.loads(message.decode('utf-8'))
 
-def send_message(message):
-    # Convert the message to JSON and send it back to the browser extension
-    encoded_message = json.dumps(message).encode('utf-8')
-    message_length = len(encoded_message)
-    sys.stdout.buffer.write(message_length.to_bytes(4, byteorder='big'))
+def sendMessage(message):
+    logging(f"start sending message.. {message}\n", "a")
+    json_message = json.dumps(message)
+    logging(f"json message: {json_message}\n", "a")
+    encoded_message = json_message.encode('utf-8')
+    logging(f"encoded message: {encoded_message}\n", "a")
+    sys.stdout.buffer.write(len(encoded_message).to_bytes(4, byteorder='little'))  #  writes length of message in first 4 bytes
+    logging(f"length encoded message: {len(encoded_message)}\n", "a")
     sys.stdout.buffer.write(encoded_message)
-    sys.stdout.flush()
+    sys.stdout.buffer.flush()
+    logging(f"send {message}\n", "a")
 
 def main():
+    logging("start test\n", "w")
     while True:
-        with open("C:\\Users\\Felix\\Desktop\\start.txt", 'w') as file:
-            file.write("start")
-            file.close()
-        # Read and process the incoming message
-        received_message = read_message()
-        with open("C:\\Users\\Felix\\Desktop\\test.txt", 'w') as file:
-            file.write(received_message)
-            file.close()
-        # Create a response based on the incoming message
-        response = {"response": f"Received: {received_message}"}
-
-        # Send the response back
-        send_message(response)
+        received_message = receiveMessage()
+        logging(f"{received_message['text']}\nuname:{received_message['uname']}\npasswd:{received_message['passwd']}\n", "a")
+            
+        response = {"response": [received_message["uname"], received_message["passwd"]]}
+        sendMessage(response)
+        
+        logging(f"succesfully send: {response['response'][0]} - {response['response'][1]}\n", "a")
 
 if __name__ == "__main__":
     main()
