@@ -1,5 +1,6 @@
 import sys
 import json
+import crypting as cy
 
 def logging(log:str, mode:str):
     with open("C:\\Users\\Felix\\Desktop\\coolStuff\\browser\\extensions\\L0ck3r\\nativeLog.txt", mode) as file:
@@ -26,15 +27,28 @@ def sendMessage(message):
     logging(f"send {message}\n", "a")
 
 def main():
+    adminuser = {
+        "uname": "admin",
+        "passwd": cy.encrypting("password")
+    }
     logging("start test\n", "w")
     while True:
         received_message = receiveMessage()
-        logging(f"{received_message['text']}\nuname:{received_message['uname']}\npasswd:{received_message['passwd']}\n", "a")
-            
-        response = {"response": [received_message["uname"], received_message["passwd"]]}
+        requestType = received_message['requestType']
+        uname = received_message['uname']
+        passwd = received_message['passwd']
+        
+        
+        logging(f"{requestType}\nuname:{uname}\npasswd:{passwd}\n", "a")
+        
+        
+        response = {
+            "received": [uname, passwd],
+            "access": cy.compare_encrypted(passwd, adminuser["passwd"])
+        }
         sendMessage(response)
         
-        logging(f"succesfully send: {response['response'][0]} - {response['response'][1]}\n", "a")
+        logging(f"succesfully send: {response["received"]}\n access: {response["access"]}", "a")
 
 if __name__ == "__main__":
     main()
