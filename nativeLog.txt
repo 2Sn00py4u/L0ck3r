@@ -1,10 +1,11 @@
 start test
-Hello from login
-uname:test
-passwd:test
-start sending message.. {'response': ['test', 'test']}
-json message: {"response": ["test", "test"]}
-encoded message: b'{"response": ["test", "test"]}'
-length encoded message: 30
-send {'response': ['test', 'test']}
-succesfully send: test - test
+registerRequest
+uname:admin
+passwd:password
+start sending message.. {'received': ['admin', 'password'], 'access': True}
+json message: {"received": ["admin", "password"], "access": true}
+encoded message: b'{"received": ["admin", "password"], "access": true}'
+length encoded message: 51
+send {'received': ['admin', 'password'], 'access': True}
+succesfully send: ['admin', 'password']
+ access: True

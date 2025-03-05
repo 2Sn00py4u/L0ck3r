@@ -9,18 +9,18 @@ loginButton.addEventListener("click", function () {
     // get user input
     var uname = unameInput.value;
     var passwd = passwdInput.value;
-    // connect via port
-    port = chrome.runtime.connectNative('com.native.locker');
     var loginRequest = {
         requestType: "loginRequest",
         uname: uname,
         passwd: passwd
-    }
+    };
+    // connect via port
+    port = chrome.runtime.connectNative('com.native.locker');
     port.postMessage(loginRequest);
-    
+    alert(loginRequest);
     // wait for the response asynchronously using a Promise
     recvMessage().then(response => {
-        alert(response.response); // alert the response
+        alert(response.received + "," + response.access); // alert the response
     }).catch(error => {
         alert('Error receiving message:', error);
     });

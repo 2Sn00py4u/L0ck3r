@@ -27,11 +27,13 @@ def sendMessage(message):
     logging(f"send {message}\n", "a")
 
 def main():
+    logging("start test\n", "w")
     adminuser = {
         "uname": "admin",
         "passwd": cy.encrypting("password")
     }
-    logging("start test\n", "w")
+    
+    
     while True:
         received_message = receiveMessage()
         requestType = received_message['requestType']
