@@ -1,0 +1,2 @@
+username VARCHAR PRIMARY KEY NOT NULL; password BLOB NOT NULL; registerDate VARCHAR NOT NULL;
+admin;something;15-03-2025;

@@ -8,12 +8,39 @@ class DBMS:
         self.__dbConnection = duck.connect(self.DBpath)
         self.__Tables = self.getTables()
     
+    def importCSV(self, csvPath: str, tableName: str):
+        with open(csvPath, "r") as csvFile:
+            attributes = []
+            values = []
+            for i, line in enumerate(csvFile):
+                if i == 0:
+                    line = line.split(";")
+                    line.pop(len(line)-1)
+                    attributes = line
+                else:
+                    line = line.split(";")
+                    line.pop(len(line)-1)
+                    values.append(tuple(line))
+            csvFile.close()
+        if tableName in self.getTables():
+            self.deleteTable(tableName)
+        self.createTable(tableName, attributes)
+        self.insertValues(tableName, values)
+    
     """  get-functions  """
     def getConnection(self):
         return self.__dbConnection
     
-    def getTables(self, pdOutput: bool = False):
-        return self.execute("""SHOW TABLES""", pdOutput)
+    def getTables(self, pdOutput: bool = False) -> list|pd.DataFrame:
+        if pdOutput == True:
+            return self.execute("""SHOW TABLES""", pdOutput)
+        else:
+            tables = []
+            tableTuples = self.execute("""SHOW TABLES""", pdOutput)
+            for i in range(len(tableTuples)):
+                tables.append(tableTuples[i][0])
+            #print(tables)
+            return tables
 
     def getAttributes(self, table: str,pdOutput: bool = False):
         return self.execute(f"""PRAGMA table_info({table})""", pdOutput)
@@ -39,6 +66,7 @@ class DBMS:
 
     def insertValues(self, table: str, rows: list[tuple,tuple]):
         for row in rows:
+            print(f"""INSERT INTO {table} VALUES {row}""")
             self.execute(f"""INSERT INTO {table} VALUES {row}""")
         self.__dbConnection.commit()
     
@@ -62,15 +90,27 @@ class DBMS:
         if not pdOutput:
             return result
         else:
-            pandasOutput = pd.DataFrame(result)
-            return duck.sql("""SELECT * FROM pandasOutput""")
+            try:
+                pandasOutput = pd.DataFrame(result)
+                return duck.sql("""SELECT * FROM pandasOutput""")
+            except:
+                return "min 1 value"
             
     
     """  magic-functions  """
     def __str__(self):
         return "class for interacting with a DB via duckdb"
+
+
+"""
+dbms = DBMS("")
+dbms.createTable("users", ["name VARCHAR PRIMARY KEY","lastname VARCHAR"])
+dbms.insertValues("users",[("Billie", "Jean"),("Some", "Dude")])
+print(dbms.execute("SELECT * FROM users", True))
+dbms.importCSV("backend\\l0ck3rDB.csv", "users")
+print(dbms.execute("SELECT * FROM users", True))
     
-"""  
+  
 dbms = DBMS(os.path.join(os.path.dirname(os.path.abspath(__name__)), "backend\\userdb.db"))
 dbms.createTable("users",["id INTEGER PRIMARY KEY", "name VARCHAR", "age INTEGER"])
 print(dbms.getTables(True))
@@ -79,4 +119,10 @@ try:
 except:
     pass
 print(dbms.getAttributes("users",True))
+
+
+con = duckdb.connect()
+file_path = os.path.join(os.path.dirname(os.path.abspath(__name__)), "backend\\testing\\file.csv")
+# Run a query and store results in a Pandas DataFrame
+df = con.execute(f"SELECT * FROM '{file_path}'").fetchdf()
 """
