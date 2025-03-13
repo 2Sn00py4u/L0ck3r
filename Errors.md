@@ -1,4 +1,4 @@
-IO Error: Failed to download extension "sqlite_scanner" at URL "http://extensions.duckdb.org/v1.2.0/windows_amd64/sqlite_scanner.duckdb_extension.gz"
+IO Error: Failed to download extension "sqlite_scanner" at URL "http://extensions.duckdb.org/v1.2.1/windows_amd64/sqlite_scanner.duckdb_extension.gz"
 Extension "sqlite_scanner" is an existing extension.
 
 For more info, visit https://duckdb.org/docs/extensions/troubleshooting/?version=v1.2.0&platform=windows_amd64&extension=sqlite_scanner (ERROR Could not establish connection)in loop

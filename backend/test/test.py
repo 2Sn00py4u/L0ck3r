@@ -1,16 +1,10 @@
-csvPath = "backend\\test\\test.csv"
+import duckdb
 
-with open(csvPath, "r") as csvFile:
-    attributes = []
-    values = []
-    for i, line in enumerate(csvFile):
-        if i == 0:
-            line = line.split(";")
-            line.pop(len(line)-1)
-            attributes.append(tuple(line))
-        else:
-            line = line.split(";")
-            line.pop(len(line)-1)
-            values.append(tuple(line))
-    csvFile.close()
-    print(attributes, values)
+# Connect to DuckDB (in-memory database for simplicity)
+con = duckdb.connect()
+
+# Install and load the sqlite_scanner extension
+con.execute("LOAD 'C:/Users/Felix/Desktop/coolStuff/browser/extensions/L0ck3r/dependencies/sqlite_scanner.duckdb_extension/sqlite_scanner.duckdb_extension'")
+
+# Alternatively, load from the local path (if you manually downloaded it)
+# con.execute("LOAD 'C:/duckdb/extensions/sqlite_scanner.duckdb_extension'")

@@ -126,3 +126,6 @@ file_path = os.path.join(os.path.dirname(os.path.abspath(__name__)), "backend\\t
 # Run a query and store results in a Pandas DataFrame
 df = con.execute(f"SELECT * FROM '{file_path}'").fetchdf()
 """
+"""
+con = duck.connect("l0ck3rDB.db")
+print(con.execute("INSTALL EXTENSION sqlite_scanner;").fetchall())"""

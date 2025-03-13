@@ -1,6 +1,7 @@
-import sys
+import sys, os
 import json
-import sqlite3 as db
+import duck_dbms as db
+import DBfunctions as dbf
 
 def logging(log:str, mode:str):
     with open("C:\\Users\\Felix\\Desktop\\coolStuff\\browser\\extensions\\L0ck3r\\nativeLog.txt", mode) as file:
@@ -28,16 +29,11 @@ def sendMessage(message):
 
 def main():
     try:
-        tempDBMS = db.connect("l0ck3rDB.db")
-        tables = tempDBMS.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()
-        logging(str(tables),"w")
-        #tempDBMS.importCSV("\\data\\users_l0ck3rDB.csv")
-            
-        #connection.read_csv("\\data\\users_l0ck3rDB.csv")
-        #connection.execute("SELECT * FROM users")
-        #DBMS = db.build_tempL0CK3R_DB()
-        #result = DBMS.getTables()
-        #logging(f"{result}\n", "w")
+        DBMS = db.DBMS(os.path.join(os.path.dirname(os.path.abspath(__name__)),"l0ck3rdb.duckdb"))
+        extensionPath = os.path.join(os.path.dirname(os.path.abspath(__name__)), r"dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extension")
+        DBMS.execute(f"LOAD '{extensionPath}'")
+        logging(str(dbf.R3gister(DBMS, "admin", "admin")), "w")
+
     except Exception as e:
         logging(f"{str(e)}","w")
     while True:
