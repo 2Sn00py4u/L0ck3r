@@ -32,10 +32,9 @@ def main():
         DBMS = db.DBMS(os.path.join(os.path.dirname(os.path.abspath(__name__)),"l0ck3rdb.duckdb"))
         extensionPath = os.path.join(os.path.dirname(os.path.abspath(__name__)), r"dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extension")
         DBMS.execute(f"LOAD '{extensionPath}'")
-        logging(str(dbf.R3gister(DBMS, "admin", "admin")), "w")
-
     except Exception as e:
         logging(f"{str(e)}","w")
+        
     while True:
         logging("in loop\n", "a")
         received_message = receiveMessage()
@@ -48,13 +47,13 @@ def main():
         if requestType == "loginRequest":
             response = {
                 "received": [uname, passwd],
-                "access": True # db.L0CKin(uname, passwd)
+                "access": dbf.L0CKin(DBMS, uname, passwd)
             }
         
         elif requestType == "registerRequest":
             response = {
                 "received": [uname, passwd],
-                "access": True # db.R3gister(uname, passwd)
+                "access": dbf.R3gister(DBMS, uname, passwd)
             }
             
         sendMessage(response)

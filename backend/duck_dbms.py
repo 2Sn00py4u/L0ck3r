@@ -70,6 +70,15 @@ class DBMS:
             self.execute(f"""INSERT INTO {table} VALUES {row}""")
         self.__dbConnection.commit()
     
+    def deleteValues(self, table: str, condition: str) -> bool:
+        deleted = False
+        try:
+            self.execute(f"""DELETE FROM {table} WHERE {condition}""")
+            deleted = True
+        except Exception as e:
+            print(e)
+        return deleted
+    
     def renameTable(self, table: str, newTablename: str) -> None:
         self.execute(f"""ALTER TABLE {table} RENAME TO {newTablename}""")
     
@@ -100,6 +109,14 @@ class DBMS:
     """  magic-functions  """
     def __str__(self):
         return "class for interacting with a DB via duckdb"
+
+
+dbms = DBMS("backend\\l0ck3rdb.duckdb")
+print(dbms.getTables(True))
+print(dbms.execute("SELECT * FROM users", True))
+#print(dbms.deleteValues("users","username = 'user'"))
+#print(dbms.execute("SELECT * FROM users", True))
+dbms.disconnectDB()
 
 
 """
