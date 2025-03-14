@@ -14,12 +14,14 @@ port.onMessage.addListener(function (response) {
         if (registerResponse){
             if (registerResponse.access === true){
                 window.location.href = "../html/home.html";
+                alert(registerResponse.received);
             }
         };
     };   
 });
 port.onDisconnect.addListener(function () {
     if(chrome.runtime.lastError){
+        alert(chrome.runtime.lastError.message);
         console.log(chrome.runtime.lastError);
     }
 });
@@ -35,5 +37,6 @@ registerButton.addEventListener("click", function () {
         passwd: passwd
     };
     // post the register-request
-    port.postMessage(registerRequest); 
+    port.postMessage(registerRequest);
+    alert("posted: " + registerRequest.requestType);
 });

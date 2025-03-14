@@ -33,7 +33,7 @@ def main():
         extensionPath = os.path.join(os.path.dirname(os.path.abspath(__name__)), r"dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extension")
         DBMS.execute(f"LOAD '{extensionPath}'")
     except Exception as e:
-        logging(f"{str(e)}","w")
+        logging(f"{str(e)}\n","w")
         
     while True:
         logging("in loop\n", "a")
@@ -58,7 +58,7 @@ def main():
             
         sendMessage(response)
         
-        logging(f"succesfully send: {response["received"]}\n access: {response["access"]}", "a")
+        logging(f"succesfully send: {response["received"]}\n access: {response["access"]}\n", "a")
 
 if __name__ == "__main__":
     main()

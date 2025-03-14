@@ -1,6 +1,7 @@
 import duckdb as duck
 import pandas as pd
 import os
+#import crypting as cy
 
 class DBMS:
     def __init__(self, DBfilePath:str) -> duck.DuckDBPyConnection:
@@ -65,9 +66,25 @@ class DBMS:
             raise Exception(f"error creating table {tableName}")
 
     def insertValues(self, table: str, rows: list[tuple,tuple]):
+        insertCommand = f"""INSERT INTO {table} ("""
+        attributes = []
+        for attributeInfo in self.getAttributes(table):
+            attributes.append(attributeInfo[1])
+        for i, attribute in enumerate(attributes):
+            if i == len(attributes)-1:
+                insertCommand += f"{attribute}) "
+            else:
+                insertCommand += f"{attribute},"
+        insertCommand += "VALUES ("
+        for i, attribute in enumerate(attributes):
+            if i == len(attributes)-1:
+                insertCommand += "?) "
+            else:
+                insertCommand += "?,"
+                
         for row in rows:
-            print(f"""INSERT INTO {table} VALUES {row}""")
-            self.execute(f"""INSERT INTO {table} VALUES {row}""")
+            print(insertCommand)
+            self.__dbConnection.execute(insertCommand, row)
         self.__dbConnection.commit()
     
     def deleteValues(self, table: str, condition: str) -> bool:
@@ -111,22 +128,15 @@ class DBMS:
         return "class for interacting with a DB via duckdb"
 
 
-dbms = DBMS("backend\\l0ck3rdb.duckdb")
-print(dbms.getTables(True))
-print(dbms.execute("SELECT * FROM users", True))
-#print(dbms.deleteValues("users","username = 'user'"))
-#print(dbms.execute("SELECT * FROM users", True))
-dbms.disconnectDB()
 
 
 """
 dbms = DBMS("")
-dbms.createTable("users", ["name VARCHAR PRIMARY KEY","lastname VARCHAR"])
-dbms.insertValues("users",[("Billie", "Jean"),("Some", "Dude")])
-print(dbms.execute("SELECT * FROM users", True))
-dbms.importCSV("backend\\l0ck3rDB.csv", "users")
-print(dbms.execute("SELECT * FROM users", True))
-    
+dbms.createTable("users", ["name VARCHAR PRIMARY KEY","password BLOB"])
+dbms.insertValues("users",[("Billie", cy.encrypting("papa")),("Some", b"Dude")])
+print(dbms.execute("SELECT password FROM users WHERE name = 'Billie'", False))
+
+ 
   
 dbms = DBMS(os.path.join(os.path.dirname(os.path.abspath(__name__)), "backend\\userdb.db"))
 dbms.createTable("users",["id INTEGER PRIMARY KEY", "name VARCHAR", "age INTEGER"])

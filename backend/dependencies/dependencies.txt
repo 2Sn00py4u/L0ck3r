@@ -1,0 +1,4 @@
+nativeMessaging host
+standard app to open
+duckdb v1.2.1
+cryp
