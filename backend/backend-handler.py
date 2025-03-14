@@ -1,7 +1,7 @@
 import sys, os
 import json
 import duck_dbms as db
-import DBfunctions as dbf
+import duck_functions as dbf
 
 def logging(log:str, mode:str):
     with open("C:\\Users\\Felix\\Desktop\\coolStuff\\browser\\extensions\\L0ck3r\\nativeLog.txt", mode) as file:

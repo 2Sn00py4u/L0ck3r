@@ -1,7 +1,6 @@
 import duckdb as duck
 import pandas as pd
 import os
-#import crypting as cy
 
 class DBMS:
     def __init__(self, DBfilePath:str) -> duck.DuckDBPyConnection:
@@ -40,7 +39,6 @@ class DBMS:
             tableTuples = self.execute("""SHOW TABLES""", pdOutput)
             for i in range(len(tableTuples)):
                 tables.append(tableTuples[i][0])
-            #print(tables)
             return tables
 
     def getAttributes(self, table: str,pdOutput: bool = False):
@@ -60,7 +58,6 @@ class DBMS:
             for i in range(len(tableAttributes)-1):
                 command += f"{tableAttributes[i]},"
             command+= f"{tableAttributes[len(tableAttributes)-1]})"
-            print(command)
             self.execute(command)
         except:
             raise Exception(f"error creating table {tableName}")
@@ -83,7 +80,6 @@ class DBMS:
                 insertCommand += "?,"
                 
         for row in rows:
-            print(insertCommand)
             self.__dbConnection.execute(insertCommand, row)
         self.__dbConnection.commit()
     
@@ -126,33 +122,3 @@ class DBMS:
     """  magic-functions  """
     def __str__(self):
         return "class for interacting with a DB via duckdb"
-
-
-
-
-"""
-dbms = DBMS("")
-dbms.createTable("users", ["name VARCHAR PRIMARY KEY","password BLOB"])
-dbms.insertValues("users",[("Billie", cy.encrypting("papa")),("Some", b"Dude")])
-print(dbms.execute("SELECT password FROM users WHERE name = 'Billie'", False))
-
- 
-  
-dbms = DBMS(os.path.join(os.path.dirname(os.path.abspath(__name__)), "backend\\userdb.db"))
-dbms.createTable("users",["id INTEGER PRIMARY KEY", "name VARCHAR", "age INTEGER"])
-print(dbms.getTables(True))
-try:
-    dbms.insertValues("users", [(1,"Billie Jean",24), (2,"Aaron Waitemeier",16),(3,"Florian Grundelmann",16)])
-except:
-    pass
-print(dbms.getAttributes("users",True))
-
-
-con = duckdb.connect()
-file_path = os.path.join(os.path.dirname(os.path.abspath(__name__)), "backend\\testing\\file.csv")
-# Run a query and store results in a Pandas DataFrame
-df = con.execute(f"SELECT * FROM '{file_path}'").fetchdf()
-"""
-"""
-con = duck.connect("l0ck3rDB.db")
-print(con.execute("INSTALL EXTENSION sqlite_scanner;").fetchall())"""

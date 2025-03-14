@@ -60,8 +60,4 @@ def compare_encrypted(password_guess: str, encrypted_password: bytes) -> bool:
         
     except:
         return "couldn't encrypt password"
-"""
-if __name__ == "__main__":  
-    encrypted_passwd = encrypting("password1234@'/\\}[]²³")
-    print(compare_encrypted("password1234@'/\\}[]²³", encrypted_passwd))
-"""    
+ 

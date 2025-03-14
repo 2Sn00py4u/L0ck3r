@@ -8,15 +8,10 @@ let port = null;
 port = chrome.runtime.connectNative('com.native.locker');
 
 port.onMessage.addListener(function (response) {
-    if (response) {
-        var loginResponse = response;
-        //alert(loginResponse.received + "," + loginResponse.access);
-        if (loginResponse){
-            if (loginResponse.access === true){
-                window.location.href = "../html/home.html";
-                alert(loginResponse.received);
-            }
-        };
+    alert(response.access);
+    if (response && response.access === true) {
+        window.location.href = "../html/home.html";
+        //alert(loginResponse.received);    
     };   
 });
 port.onDisconnect.addListener(function () {
@@ -38,5 +33,5 @@ loginButton.addEventListener("click", function () {
     };
     // post the Login-request
     port.postMessage(loginRequest);
-    alert("posted: " + loginRequest.requestType);
+    //alert("posted: " + loginRequest.requestType);
 });
