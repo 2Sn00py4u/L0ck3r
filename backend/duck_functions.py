@@ -14,7 +14,6 @@ def build_L0CK3R_DB(filePath: str) -> db.DBMS:
     #  users(_id_, uname, passwd, registerDate)
     L0CK3R_DBMS.createTable("users",["username VARCHAR PRIMARY KEY NOT NULL", "password BLOB", "registerDate VARCHAR NOT NULL"])
     L0CK3R_DBMS.insertValues("users",[("admin",cy.encrypting("admin"),str(date.today()))])
-    L0CK3R_DBMS.insertValues("users",[("papa",cy.encrypting("papa"),str(date.today()))])
     return L0CK3R_DBMS
 
 def L0CKin(DBMS: db.DBMS, username: str, password: str) -> bool:
@@ -35,3 +34,5 @@ def R3gister(DBMS: db.DBMS, username: str, password: str) -> bool:
     except Exception as e:
         r3gistert = False
     return r3gistert
+
+#build_L0CK3R_DB("backend\\l0ck3rdb.duckdb")

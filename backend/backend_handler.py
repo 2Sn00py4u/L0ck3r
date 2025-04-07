@@ -1,0 +1,98 @@
+import sys, os
+import json
+import duck_dbms as db
+import duck_functions as dbf
+
+def logging(log:str, mode:str):
+    with open("C:\\Users\\Felix\\Desktop\\coolStuff\\browser\\extensions\\L0ck3r\\nativeLog.txt", mode) as file:
+            file.write(log)
+            file.close()
+
+def receiveMessage():
+    #  reading message-head
+    try:
+        message_length = sys.stdin.buffer.read(4)
+        if not message_length:
+            return {"valid": False}
+        message_length = int.from_bytes(message_length, byteorder='little')
+        logging(f"message_length: {message_length}\n", "a")
+        #  reading message-body
+        message = sys.stdin.buffer.read(message_length)
+        loaded_message = json.loads(message.decode('utf-8'))
+        loaded_message['valid'] = True
+        logging(f"loaded_message: {loaded_message}\n", "a")
+        return loaded_message
+    except:
+        return {"valid": False}
+
+def sendMessage(message):
+    #  converting dict -> json
+    json_message = json.dumps(message)
+    encoded_message = json_message.encode('utf-8')
+    #  writing message(message-head (first 4 bytes): length of message, message-body: json-message)
+    sys.stdout.buffer.write(len(encoded_message).to_bytes(4, byteorder='little'))
+    sys.stdout.buffer.write(encoded_message)
+    #  send/flush message
+    sys.stdout.buffer.flush()
+
+def checkValidInput(uname: str, passwd: str):
+    invalidChars = ['#', ',', '"', "'"]
+    ValidInput = False
+    if len(uname) >= 4 and len(uname) < 21 and len(passwd) >= 4 and len(passwd) < 21:
+        if any(char in uname for char in invalidChars) == False and any(char in passwd for char in invalidChars) == False:
+            ValidInput = True
+    return ValidInput
+
+def main():
+    try:
+        DBMS = db.DBMS(os.path.join(os.path.dirname(os.path.abspath(__name__)),r"l0ck3rdb.duckdb"))
+        extensionPath = os.path.join(os.path.dirname(os.path.abspath(__name__)), r"dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extension")
+        logging(extensionPath, "a")
+        DBMS.execute(f"LOAD '{extensionPath}'")
+    except Exception as e:
+        logging(f"{str(e)}\n","w")
+        sys.exit()
+    try:    
+        logging("in loop\n", "a")
+        received_message = receiveMessage()
+        if received_message['valid'] == True:
+            logging("msg received\n", "a")
+            logging(f"received_message: {received_message}\n", "a")
+            requestType = received_message['requestType']
+            uname = received_message['uname']
+            passwd = received_message['passwd']
+            logging(f"{requestType}\nuname:{uname}\npasswd:{passwd}\n", "a")
+            if checkValidInput(uname, passwd) == True:
+                if requestType == "loginRequest":
+                    response = {
+                        "received": [uname, passwd],
+                        "access": dbf.L0CKin(DBMS, uname, passwd)
+                    }
+                
+                elif requestType == "registerRequest":
+                    response = {
+                        "received": [uname, passwd],
+                        "access": dbf.R3gister(DBMS, uname, passwd)
+                    }
+                    
+                sendMessage(response)
+                
+                logging(f"succesfully send: {response["received"]}\n access: {response["access"]}\n", "a")
+            else:
+                sendMessage({"access": False})
+                logging(f"Invalidsend: {received_message}\n", "a")
+        else:
+            try:
+                sendMessage({"access": False})
+                logging(f"Invalidsend: {received_message}\n", "a")
+            except:
+                pass
+
+    except Exception as e:        
+        logging(f"Disconnected\nerror: {e}\n", "a")
+        sys.exit()
+    finally:
+        DBMS.disconnectDB()
+        logging("DBMS disconnected\n", "a")
+if __name__ == "__main__":
+    main()

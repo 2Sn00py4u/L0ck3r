@@ -25,6 +25,18 @@ body{
     color: #f0f8ff;
 }
 
+.loginput.error{
+    background-color: #1a030d;
+    color: #f0f8ff;
+    box-shadow: 0 0 15px #f84d86;
+    transition: 0.3s;
+}
+.loginput.error:hover{
+    background-color: #431d2e;
+    box-shadow: 0 0 15px #f0f8ff;
+    color: #f0f8ff;
+}
+
 
 .login{
     min-width: 70%;

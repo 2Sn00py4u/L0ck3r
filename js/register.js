@@ -7,16 +7,36 @@ let passwdInput = document.getElementById("register_passwdInput");
 let port = null;
 port = chrome.runtime.connectNative('com.native.locker');
 
+// check on invalid input
+
+if (localStorage.getItem("invalidRegisterInput") === "true"){
+    unameInput.classList.add("error");
+    passwdInput.classList.add("error");
+    unameInput.value = localStorage.getItem("uname");
+    passwdInput.value = localStorage.getItem("passwd");
+    localStorage.removeItem("invalidRegisterInput");
+}
+
+// main
 port.onMessage.addListener(function (response) {
-    alert(response.access);
-    if (response && response.access === true) {
-        window.location.href = "../html/home.html";
-        //alert(registerResponse.received);    
-    };   
+    registerButton.disabled = false; // Re-enable the button after processing
+    registerButton.innerText = "Register"; // Reset button text
+    if (response) {
+        if (response.access === true){
+            window.location.href = "../html/home.html";
+        };
+        if (response.access === false){
+            var uname = unameInput.value;
+            var passwd = passwdInput.value;
+            localStorage.setItem("uname", uname);
+            localStorage.setItem("passwd", passwd);
+            localStorage.setItem("invalidRegisterInput", "true");
+            window.location.href = "../html/register.html";
+        };
+    };
 });
 port.onDisconnect.addListener(function () {
     if(chrome.runtime.lastError){
-        alert(chrome.runtime.lastError.message);
         console.log(chrome.runtime.lastError);
     }
 });
@@ -32,6 +52,7 @@ registerButton.addEventListener("click", function () {
         passwd: passwd
     };
     // post the register-request
+    registerButton.disabled = true; // Disable the button to prevent multiple clicks
+    registerButton.innerText = "Registering..."; // Change button text to indicate processing
     port.postMessage(registerRequest);
-    //alert("posted: " + registerRequest.requestType);
 });
