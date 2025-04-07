@@ -123,5 +123,5 @@ class DBMS:
     def __str__(self):
         return "class for interacting with a DB via duckdb"
 
-dbms = DBMS("backend\\l0ck3rdb.duckdb")
-print(dbms.execute("SELECT * FROM users", True))
+#dbms = DBMS("backend\\l0ck3rdb.duckdb")
+#print(dbms.execute("SELECT * FROM users", True))
