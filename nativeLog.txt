@@ -1,0 +1,71 @@
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 66
+loaded_message: {'requestType': 'registerRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'registerRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+registerRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: False
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'registerRequest', 'uname': 'juri', 'passwd': 'jur', 'valid': True}
+msg received
+received_message: {'requestType': 'registerRequest', 'uname': 'juri', 'passwd': 'jur', 'valid': True}
+registerRequest
+uname:juri
+passwd:jur
+Invalidsend: {'requestType': 'registerRequest', 'uname': 'juri', 'passwd': 'jur', 'valid': True}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 64
+loaded_message: {'requestType': 'registerRequest', 'uname': 'juri', 'passwd': 'juri', 'valid': True}
+msg received
+received_message: {'requestType': 'registerRequest', 'uname': 'juri', 'passwd': 'juri', 'valid': True}
+registerRequest
+uname:juri
+passwd:juri
+succesfully send: ['juri', 'juri']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 69
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'asldfnlafkn', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'asldfnlafkn', 'valid': True}
+loginRequest
+uname:admin
+passwd:asldfnlafkn
+succesfully send: ['admin', 'asldfnlafkn']
+ access: False
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 61
+loaded_message: {'requestType': 'loginRequest', 'uname': 'juri', 'passwd': 'juri', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'juri', 'passwd': 'juri', 'valid': True}
+loginRequest
+uname:juri
+passwd:juri
+succesfully send: ['juri', 'juri']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
