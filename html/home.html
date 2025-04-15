@@ -3,13 +3,66 @@
 <head>
     <title>Home</title>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/home.css">
     <script src="../js/mustache.min.js"></script>
 </head>
 <body>
-    <h1>L0CK3R</h1>
-    <div id="home-template"></div>
-  
+    <div class="page-container">
+        <div id="side-menu">
+            <div class="side-menu-header">
+                <div class="side-menu-icon-container" style="margin-bottom: 30px;">
+                    <img src="../assets/home/side-menu/user.png" alt="User" class="side-menu-icons">    
+                </div>
+                <div class="side-menu-icon-container" style="margin-top: 30px">
+                    <img src="../assets/home/side-menu/search.png" alt="Search" class="side-menu-icons">
+                </div>
+            </div>
+            <div class="side-menu-bottom">
+                <div class="side-menu-icon-container" style="margin-bottom: 30px;">
+                    <img src="../assets/home/side-menu/more.png" alt="More" class="side-menu-icons"> 
+                </div>
+                <div class="side-menu-icon-container" style="margin-top: 30px;">
+                    <img src="../assets/home/side-menu/logout.png" alt="Logout" class="side-menu-icons">
+                </div>  
+            </div>
+        </div>
+        <div id="content-container">
+            <!--Content-->
+        </div>
+    </div>
+
+    <!--Content Template-->
+    <script id="content-template" type="text/template">
+        <div class="greeting">
+            <h1 style="padding-bottom: 5%;"><b>Welcome back {{user}}!</b></h1>
+            <p>Latest access: {{latest_access}}</p>
+        </div>
+        <div id="preview-password-cards-container">
+            <h2 style="padding-bottom: 5%;"><b>Your Passwords</b></h2>
+            <!--Password-Cards-->
+        <div>
+    </script>
+
+    <!--Card Template-->
+    <script id="preview-card-template" type="text/template">
+        <div class="preview-password-card" id="preview-password-card-{{card_id}}">
+            <div class="card-preview-image">
+                <img src="{{img_path}}" id="card-image-{{card_id}}" alt="Card Image">
+            </div>
+            <div class="preview-card-body">
+                <div class="card-preview-content">
+                    <h6 style="font-size: 18px; border-bottom: #f0f8ff 1px solid;"><b>{{card_title}}</b></h6>
+                    <label for="email-card-{{card_id}}" style="font-size: 11px;">Email:</label>
+                    <p id="email-card-{{card_id}}" style="font-size: 16px;">{{email}}</p>
+                </div>
+                <div class="preview-card-options">
+                    <div class="delete-preview-image">
+                        <img src="../assets/home/delete.png" id="delete-image-{{card_id}}" alt="Card Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
     <script src="../js/home.js"></script>
 </body>
 </html>
