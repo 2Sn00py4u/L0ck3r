@@ -92,6 +92,9 @@ class DBMS:
             print(e)
         return deleted
     
+    def addCollumn(self, table: str, collumnName: str, collumnType: str) -> None:
+        self.execute(f"""ALTER TABLE {table} ADD COLUMN {collumnName} {collumnType}""")
+    
     def renameTable(self, table: str, newTablename: str) -> None:
         self.execute(f"""ALTER TABLE {table} RENAME TO {newTablename}""")
     

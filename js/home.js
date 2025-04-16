@@ -1,44 +1,7 @@
-let userdata = {
-    user: "admin",
-    latest_access: "2023-10-01 12:00:00",
-    password_cards: [
-        {
-            card_id: "1",
-            card_title: "L0CK3R",
-            img_path: "../assets/icons/icon128.png",
-            email: "admin@l0ck3r.com",
-            password: "admin",
-        },
-        {
-            card_id: "2",
-            card_title: "Youtube",
-            img_path: "../assets/website_images/youtube.png",
-            email: "admin@youtube.com",
-            password: "password123",
-        },
-        {
-            card_id: "3",
-            card_title: "Google",
-            img_path: "../assets/website_images/google.png",
-            email: "admin@google.com",
-            password: "password123",
-        },
-        {
-            card_id: "4",
-            card_title: "Instagram",
-            img_path: "../assets/website_images/instagram.png",
-            email: "admin@instagram.com",
-            password: "password123",
-        },
-        {
-            card_id: "5",
-            card_title: "Spotify",
-            img_path: "../assets/website_images/spotify.png",
-            email: "admin@spotify.com",
-            password: "password123",
-        },
-    ],
-};
+let userdata = JSON.parse(localStorage.getItem("userdata"));
+if (userdata === null) {
+    window.location.href = "../html/login.html";
+}
 
 document.addEventListener("DOMContentLoaded", function() {
     const homeTemplate = document.getElementById("content-template").innerHTML;
@@ -61,10 +24,36 @@ document.addEventListener("DOMContentLoaded", function() {
         };
         template = document.getElementById("preview-password-cards-container");
         template.innerHTML += Mustache.render(cardTemplate, password_data); 
-    }
-
-    
+    }   
 });
 
 
+let logoutButton = document.getElementById("logout_button")
+
+logoutButton.addEventListener("click", function() {
+    let port = chrome.runtime.connectNative('com.native.locker');
+
+    port.onMessage.addListener(function (response) {
+        logoutButton.style.backgroundColor = "transparent"; // Re-enable the button after processing
+        if (response) {
+            if (response.logout === true){
+                localStorage.removeItem("userdata");
+                window.location.href = "../html/login.html";
+            };
+        };
+    });
+    port.onDisconnect.addListener(function () {
+        if(chrome.runtime.lastError){
+            console.log(chrome.runtime.lastError);
+        }
+    });
+
+    var logoutRequest = {
+        requestType: "logoutRequest",
+        timestamp: new Date().toLocaleString(),
+        uname: userdata.user,
+    };
+    port.postMessage(logoutRequest);
+    logoutButton.style.backgroundColor = "#313241";
     
+});

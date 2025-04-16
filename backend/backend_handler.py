@@ -60,27 +60,52 @@ def main():
             logging(f"received_message: {received_message}\n", "a")
             requestType = received_message['requestType']
             uname = received_message['uname']
-            passwd = received_message['passwd']
-            logging(f"{requestType}\nuname:{uname}\npasswd:{passwd}\n", "a")
-            if checkValidInput(uname, passwd) == True:
-                if requestType == "loginRequest":
-                    response = {
-                        "received": [uname, passwd],
-                        "access": dbf.L0CKin(DBMS, uname, passwd)
-                    }
-                
-                elif requestType == "registerRequest":
-                    response = {
-                        "received": [uname, passwd],
-                        "access": dbf.R3gister(DBMS, uname, passwd)
-                    }
-                    
-                sendMessage(response)
-                
-                logging(f"succesfully send: {response["received"]}\n access: {response["access"]}\n", "a")
+            if requestType == "logoutRequest":
+                userdata = dbf.readUserdata(DBMS, uname)
+                if userdata != None:
+                    userdata["latest_access"] = received_message['timestamp']
+                    dbf.setUserdata(DBMS, uname, userdata)
+                    sendMessage({"logout": True})
+                    logging(f"logout\n", "a")
             else:
-                sendMessage({"access": False})
-                logging(f"Invalidsend: {received_message}\n", "a")
+                passwd = received_message['passwd']
+                logging(f"{requestType}\nuname:{uname}\npasswd:{passwd}\n", "a")
+                if checkValidInput(uname, passwd) == True:
+                    if requestType == "loginRequest":
+                        response = {
+                            "received": [uname, passwd],
+                            "access": dbf.L0CKin(DBMS, uname, passwd),
+                            "userdata": dbf.readUserdata(DBMS, uname)
+                        }
+                    
+                    elif requestType == "registerRequest":
+                        response = {
+                            "received": [uname, passwd],
+                            "access": dbf.R3gister(DBMS, uname, passwd)    
+                        }
+                        if response["access"] == True:
+                            standard_userdata = {
+                                "user": uname,
+                                "latest_access": "new",
+                                "password_cards": [
+                                    {
+                                        "card_id": "1",
+                                        "card_title": "L0CK3R",
+                                        "img_path": "../assets/icons/icon128.png",
+                                        "email": uname,
+                                        "password": passwd,
+                                    }
+                                ]
+                            }
+                            dbf.setUserdata(DBMS, uname, standard_userdata)
+                            response["userdata"] = dbf.readUserdata(DBMS, uname)
+                        
+                    sendMessage(response)
+                    
+                    logging(f"succesfully send: {response["received"]}\n access: {response["access"]}\n", "a")
+                else:
+                    sendMessage({"access": False})
+                    logging(f"Invalidsend: {received_message}\n", "a")
         else:
             try:
                 sendMessage({"access": False})

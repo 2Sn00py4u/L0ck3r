@@ -23,6 +23,11 @@ port.onMessage.addListener(function (response) {
     registerButton.innerText = "Register"; // Reset button text
     if (response) {
         if (response.access === true){
+            if (response.userdata.latest_access === "new"){
+                const latest_access = new Date().toLocaleString();
+                response.userdata.latest_access = latest_access;
+            }
+            localStorage.setItem("userdata", JSON.stringify(response.userdata));
             window.location.href = "../html/home.html";
         };
         if (response.access === false){

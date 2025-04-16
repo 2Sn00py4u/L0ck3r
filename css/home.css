@@ -48,22 +48,6 @@ body{
     height: 100%;
     border-radius: 10px;
 }
-/*.side-menu-header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #1e2234;
-    border-radius: 10px;
-}
-
-.side-menu-bottom{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #1e2234;
-    border-radius: 10px;
-    position: absolute
-}*/
 
 #content-container{
     flex: 1;
