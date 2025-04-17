@@ -31,10 +31,11 @@ document.addEventListener("DOMContentLoaded", function() {
 let logoutButton = document.getElementById("logout_button")
 
 logoutButton.addEventListener("click", function() {
+    let homepage = document.getElementById("homepage");
     let port = chrome.runtime.connectNative('com.native.locker');
 
     port.onMessage.addListener(function (response) {
-        logoutButton.style.backgroundColor = "transparent"; // Re-enable the button after processing
+        homepage.classList.remove("logoutloader"); 
         if (response) {
             if (response.logout === true){
                 localStorage.removeItem("userdata");
@@ -54,6 +55,6 @@ logoutButton.addEventListener("click", function() {
         uname: userdata.user,
     };
     port.postMessage(logoutRequest);
-    logoutButton.style.backgroundColor = "#313241";
-    
+    homepage.innerHTML = "";
+    homepage.classList.add("logoutloader");
 });

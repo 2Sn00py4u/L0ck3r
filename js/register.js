@@ -19,8 +19,6 @@ if (localStorage.getItem("invalidRegisterInput") === "true"){
 
 // main
 port.onMessage.addListener(function (response) {
-    registerButton.disabled = false; // Re-enable the button after processing
-    registerButton.innerText = "Register"; // Reset button text
     if (response) {
         if (response.access === true){
             if (response.userdata.latest_access === "new"){
@@ -57,7 +55,6 @@ registerButton.addEventListener("click", function () {
         passwd: passwd
     };
     // post the register-request
-    registerButton.disabled = true; // Disable the button to prevent multiple clicks
-    registerButton.innerText = "Registering..."; // Change button text to indicate processing
+    document.getElementById("registerButton-container").innerHTML = '<div class="loginloader"></div>';
     port.postMessage(registerRequest);
 });

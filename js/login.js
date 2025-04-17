@@ -19,8 +19,6 @@ if (localStorage.getItem("invalidLoginInput") === "true"){
 
 // main
 port.onMessage.addListener(function (response) {
-    loginButton.disabled = false; // Re-enable the button after processing
-    loginButton.innerText = "Login"; // Reset button text
     if (response) {
         if (response.access === true){
             if (response.userdata.latest_access === "new"){
@@ -57,7 +55,6 @@ loginButton.addEventListener("click", function () {
         passwd: passwd
     };
     // post the Login-request
-    loginButton.disabled = true; // Disable the button to prevent multiple clicks 
-    loginButton.innerText = "Logging in..."; // Change button text to indicate processing
+    document.getElementById("loginButton-container").innerHTML = '<div class="loginloader"></div>';
     port.postMessage(loginRequest);
 });

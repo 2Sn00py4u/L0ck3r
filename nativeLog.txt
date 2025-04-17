@@ -1,5 +1,16 @@
-IO Error: File is already open in 
-C:\Users\Felix\AppData\Local\Programs\Python\Python312\python.exe (PID 19900)
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
 DBMS disconnected
 C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
 message_length: 63
@@ -14,62 +25,633 @@ succesfully send: ['admin', 'admin']
 DBMS disconnected
 C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
 message_length: 81
-loaded_message: {'requestType': 'logoutRequest', 'timestamp': '16.4.2025, 22:45:51', 'uname': 'admin', 'valid': True}
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 15:41:05', 'uname': 'admin', 'valid': True}
 msg received
-received_message: {'requestType': 'logoutRequest', 'timestamp': '16.4.2025, 22:45:51', 'uname': 'admin', 'valid': True}
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 15:41:05', 'uname': 'admin', 'valid': True}
 logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 81
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 15:43:21', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 15:43:21', 'uname': 'admin', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 81
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 15:47:21', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 15:47:21', 'uname': 'admin', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 81
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 15:49:50', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 15:49:50', 'uname': 'admin', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 81
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 15:51:35', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 15:51:35', 'uname': 'admin', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 61
+loaded_message: {'requestType': 'loginRequest', 'uname': 'toni', 'passwd': 'toni', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'toni', 'passwd': 'toni', 'valid': True}
+loginRequest
+uname:toni
+passwd:toni
+succesfully send: ['toni', 'toni']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 80
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 15:53:27', 'uname': 'toni', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 15:53:27', 'uname': 'toni', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 81
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 15:57:39', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 15:57:39', 'uname': 'admin', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 81
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 15:58:20', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 15:58:20', 'uname': 'admin', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 81
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 15:59:25', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 15:59:25', 'uname': 'admin', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 81
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 16:03:42', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 16:03:42', 'uname': 'admin', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 53
+loaded_message: {'requestType': 'loginRequest', 'uname': '', 'passwd': '', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': '', 'passwd': '', 'valid': True}
+loginRequest
+uname:
+passwd:
+Invalidsend: {'requestType': 'loginRequest', 'uname': '', 'passwd': '', 'valid': True}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 81
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 16:04:37', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 16:04:37', 'uname': 'admin', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 81
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:16:54', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:16:54', 'uname': 'admin', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 81
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:23:52', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:23:52', 'uname': 'admin', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 81
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:25:38', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:25:38', 'uname': 'admin', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 81
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:26:51', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:26:51', 'uname': 'admin', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 81
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:27:58', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:27:58', 'uname': 'admin', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 81
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:36:03', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:36:03', 'uname': 'admin', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 81
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:39:48', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:39:48', 'uname': 'admin', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 81
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:40:31', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:40:31', 'uname': 'admin', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 81
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:41:23', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:41:23', 'uname': 'admin', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 81
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:42:20', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:42:20', 'uname': 'admin', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 61
+loaded_message: {'requestType': 'loginRequest', 'uname': 'toni', 'passwd': 'toni', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'toni', 'passwd': 'toni', 'valid': True}
+loginRequest
+uname:toni
+passwd:toni
+succesfully send: ['toni', 'toni']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 80
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:42:35', 'uname': 'toni', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:42:35', 'uname': 'toni', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 61
+loaded_message: {'requestType': 'loginRequest', 'uname': 'toni', 'passwd': 'toni', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'toni', 'passwd': 'toni', 'valid': True}
+loginRequest
+uname:toni
+passwd:toni
+succesfully send: ['toni', 'toni']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 80
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:42:59', 'uname': 'toni', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:42:59', 'uname': 'toni', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 81
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:46:43', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:46:43', 'uname': 'admin', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 61
+loaded_message: {'requestType': 'loginRequest', 'uname': 'toni', 'passwd': 'toni', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'toni', 'passwd': 'toni', 'valid': True}
+loginRequest
+uname:toni
+passwd:toni
+succesfully send: ['toni', 'toni']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 80
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:46:53', 'uname': 'toni', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:46:53', 'uname': 'toni', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 53
+loaded_message: {'requestType': 'loginRequest', 'uname': '', 'passwd': '', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': '', 'passwd': '', 'valid': True}
+loginRequest
+uname:
+passwd:
+Invalidsend: {'requestType': 'loginRequest', 'uname': '', 'passwd': '', 'valid': True}
 DBMS disconnected
 C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
 Invalidsend: {'valid': False}
 DBMS disconnected
 C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
 message_length: 64
-loaded_message: {'requestType': 'registerRequest', 'uname': 'toni', 'passwd': 'toni', 'valid': True}
+loaded_message: {'requestType': 'registerRequest', 'uname': 'user', 'passwd': 'user', 'valid': True}
 msg received
-received_message: {'requestType': 'registerRequest', 'uname': 'toni', 'passwd': 'toni', 'valid': True}
+received_message: {'requestType': 'registerRequest', 'uname': 'user', 'passwd': 'user', 'valid': True}
 registerRequest
-uname:toni
-passwd:toni
-succesfully send: ['toni', 'toni']
+uname:user
+passwd:user
+succesfully send: ['user', 'user']
  access: False
 DBMS disconnected
 C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
-Invalidsend: {'valid': False}
-DBMS disconnected
-C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
-message_length: 61
-loaded_message: {'requestType': 'loginRequest', 'uname': 'toni', 'passwd': 'toni', 'valid': True}
+message_length: 64
+loaded_message: {'requestType': 'registerRequest', 'uname': 'elio', 'passwd': 'elio', 'valid': True}
 msg received
-received_message: {'requestType': 'loginRequest', 'uname': 'toni', 'passwd': 'toni', 'valid': True}
-loginRequest
-uname:toni
-passwd:toni
-succesfully send: ['toni', 'toni']
+received_message: {'requestType': 'registerRequest', 'uname': 'elio', 'passwd': 'elio', 'valid': True}
+registerRequest
+uname:elio
+passwd:elio
+succesfully send: ['elio', 'elio']
  access: True
 DBMS disconnected
 C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
 message_length: 80
-loaded_message: {'requestType': 'logoutRequest', 'timestamp': '16.4.2025, 22:46:24', 'uname': 'toni', 'valid': True}
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:47:25', 'uname': 'elio', 'valid': True}
 msg received
-received_message: {'requestType': 'logoutRequest', 'timestamp': '16.4.2025, 22:46:24', 'uname': 'toni', 'valid': True}
-logout
-DBMS disconnected
-C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
-message_length: 61
-loaded_message: {'requestType': 'loginRequest', 'uname': 'toni', 'passwd': 'toni', 'valid': True}
-msg received
-received_message: {'requestType': 'loginRequest', 'uname': 'toni', 'passwd': 'toni', 'valid': True}
-loginRequest
-uname:toni
-passwd:toni
-succesfully send: ['toni', 'toni']
- access: True
-DBMS disconnected
-C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
-message_length: 80
-loaded_message: {'requestType': 'logoutRequest', 'timestamp': '16.4.2025, 22:47:02', 'uname': 'toni', 'valid': True}
-msg received
-received_message: {'requestType': 'logoutRequest', 'timestamp': '16.4.2025, 22:47:02', 'uname': 'toni', 'valid': True}
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:47:25', 'uname': 'elio', 'valid': True}
 logout
 DBMS disconnected
 C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
@@ -88,30 +670,30 @@ succesfully send: ['admin', 'admin']
 DBMS disconnected
 C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
 message_length: 81
-loaded_message: {'requestType': 'logoutRequest', 'timestamp': '16.4.2025, 22:47:59', 'uname': 'admin', 'valid': True}
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:47:54', 'uname': 'admin', 'valid': True}
 msg received
-received_message: {'requestType': 'logoutRequest', 'timestamp': '16.4.2025, 22:47:59', 'uname': 'admin', 'valid': True}
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:47:54', 'uname': 'admin', 'valid': True}
 logout
 DBMS disconnected
 C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
 Invalidsend: {'valid': False}
 DBMS disconnected
 C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
-message_length: 63
-loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+message_length: 61
+loaded_message: {'requestType': 'loginRequest', 'uname': 'elio', 'passwd': 'elio', 'valid': True}
 msg received
-received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+received_message: {'requestType': 'loginRequest', 'uname': 'elio', 'passwd': 'elio', 'valid': True}
 loginRequest
-uname:admin
-passwd:admin
-succesfully send: ['admin', 'admin']
+uname:elio
+passwd:elio
+succesfully send: ['elio', 'elio']
  access: True
 DBMS disconnected
 C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
-message_length: 81
-loaded_message: {'requestType': 'logoutRequest', 'timestamp': '16.4.2025, 22:55:36', 'uname': 'admin', 'valid': True}
+message_length: 80
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:48:20', 'uname': 'elio', 'valid': True}
 msg received
-received_message: {'requestType': 'logoutRequest', 'timestamp': '16.4.2025, 22:55:36', 'uname': 'admin', 'valid': True}
+received_message: {'requestType': 'logoutRequest', 'timestamp': '17.4.2025, 20:48:20', 'uname': 'elio', 'valid': True}
 logout
 DBMS disconnected
 C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop

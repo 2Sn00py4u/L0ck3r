@@ -12,7 +12,6 @@ body{
 
 .page-container{
     background-color: #1e2234;
-    
     display: flex;
     height: 100vh;
 }
@@ -157,3 +156,21 @@ body{
     height: 100%;
     border-radius: 10px;
 }
+
+.logoutloader {
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 30px;
+    animation: l1 1s linear infinite alternate;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.logoutloader:before {
+    content:"Securing data...";
+}
+@keyframes l1 {to{opacity: 0}}
+
+
+
