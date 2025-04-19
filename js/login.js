@@ -1,4 +1,9 @@
 
+if (localStorage.getItem("userdata") !== null){
+    window.location.href = "../html/home.html";
+};
+
+
 // global variables
 let loginButton = document.getElementById("loginButton");
 let unameInput = document.getElementById("login_unameInput");

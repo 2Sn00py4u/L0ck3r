@@ -52,17 +52,36 @@
             <div class="preview-card-body">
                 <div class="card-preview-content">
                     <h6 style="font-size: 18px; border-bottom: #f0f8ff 1px solid;"><b>{{card_title}}</b></h6>
-                    <label for="email-card-{{card_id}}" style="font-size: 11px;">Email:</label>
+                    <label for="email-card-{{card_id}}" style="font-size: 11px;">Email/Username:</label>
                     <p id="email-card-{{card_id}}" style="font-size: 16px;">{{email}}</p>
                 </div>
                 <div class="preview-card-options">
-                    <div class="delete-preview-image">
-                        <img src="../assets/home/delete.png" id="delete-image-{{card_id}}" alt="Card Image">
+                    <div class="delete-preview-image" id="delete-image-{{card_id}}">
+                        <img src="../assets/home/delete.png" alt="Card Image">
+                    </div>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="delete-warning-{{card_id}}" tabindex="-1" aria-labelledby="delete-warning-{{card_id}}" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content deleteWarning">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Warning</h1>
+                                </div>
+                                <div class="modal-body">
+                                    Are you shure you want to delete your {{card_title}}-credentials?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Keep it</button>
+                                    <button type="button" class="btn btn-danger" id="final-delete-{{card_id}}">Delete</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </script>
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../js/home.js"></script>
 </body>
 </html>

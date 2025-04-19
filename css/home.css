@@ -157,6 +157,12 @@ body{
     border-radius: 10px;
 }
 
+.deleteWarning{
+    background-color: #432232;
+    border: #f0f8ff 1px solid;
+    box-shadow: 0 0 15px #a30147;
+}
+
 .logoutloader {
     font-weight: bold;
     font-family: sans-serif;
@@ -171,6 +177,5 @@ body{
     content:"Securing data...";
 }
 @keyframes l1 {to{opacity: 0}}
-
 
 

@@ -67,6 +67,25 @@ def main():
                     dbf.setUserdata(DBMS, uname, userdata)
                     sendMessage({"logout": True})
                     logging(f"logout\n", "a")
+                    
+            elif requestType == "delete_passwordCard":
+                logging("deleting card...\n", "a")
+                userdata = dbf.readUserdata(DBMS, uname)
+                if userdata != None:
+                    for i in range(len(userdata["password_cards"])):
+                        logging(f"{userdata["password_cards"][i]}\n {received_message["password_card"]}\n","a")
+                        logging(f"{str(userdata["password_cards"][i] == received_message["password_card"])}\n", "a")
+                        if userdata["password_cards"][i] == received_message["password_card"]:
+                            userdata["password_cards"].pop(i)
+                            logging("1\n","a")
+                            for i in range(len(userdata["password_cards"])):
+                                userdata["password_cards"][i]["card_id"] = str((i+1))
+                            logging("2\n","a")
+                            dbf.setUserdata(DBMS, uname, userdata)
+                            sendMessage({"deletedPasswordCard": True})
+                            logging(f"deleted{userdata["password_cards"][i]}", "a")
+                            break                    
+                
             else:
                 passwd = received_message['passwd']
                 logging(f"{requestType}\nuname:{uname}\npasswd:{passwd}\n", "a")
@@ -75,9 +94,13 @@ def main():
                         response = {
                             "received": [uname, passwd],
                             "access": dbf.L0CKin(DBMS, uname, passwd),
-                            "userdata": dbf.readUserdata(DBMS, uname)
                         }
-                    
+                        if response["access"] == True:
+                            response["userdata"] = dbf.readUserdata(DBMS, uname)
+                        else:
+                            sendMessage({"access": False})
+                            logging(f"user not registered: {received_message}\n", "a")
+                        
                     elif requestType == "registerRequest":
                         response = {
                             "received": [uname, passwd],

@@ -3,8 +3,8 @@ import json
 
 message = {
     "requestType": "loginRequest",
-    "uname": "testuser",
-    "passwd": "testpass"
+    "uname": "toni",
+    "passwd": "toni"
 }
 json_message = json.dumps(message)
 message_length = len(json_message).to_bytes(4, byteorder='little')

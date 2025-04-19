@@ -6,7 +6,7 @@ from datetime import date
 
 USERDATA = {
     "user": "admin",
-    "latest_access": "2023-10-01 12:00:00",
+    "latest_access": "new",
     "password_cards": [
         {
             "card_id": "1",
