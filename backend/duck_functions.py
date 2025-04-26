@@ -67,7 +67,6 @@ def setUserdata(DBMS: db.DBMS, username: str, userdata: dict) -> bool:
     except Exception as e:
         print(e)
         return False
-
 """
 DMBS = build_L0CK3R_DB("backend\\l0ck3rdb.duckdb")
 
@@ -79,7 +78,7 @@ USERDATA["password_cards"].append(
         "card_title": "Youtube",
         "img_path": "../assets/website_images/youtube.png",
         "email": "admin@youtube.com",
-        "password": "password123",
+        "password": "YTadmin123",
     }
 )
 USERDATA["password_cards"].append(
@@ -88,7 +87,7 @@ USERDATA["password_cards"].append(
         "card_title": "Google",
         "img_path": "../assets/website_images/google.png",
         "email": "admin@google.com",
-        "password": "password123",
+        "password": "googleAdmin123",
     }
 )
 USERDATA["password_cards"].append(
@@ -97,7 +96,7 @@ USERDATA["password_cards"].append(
         "card_title": "Instagram",
         "img_path": "../assets/website_images/instagram.png",
         "email": "admin@instagram.com",
-        "password": "password123",
+        "password": "instaAdmin123",
     }
 )
 USERDATA["password_cards"].append(
@@ -106,7 +105,7 @@ USERDATA["password_cards"].append(
         "card_title": "Spotify",
         "img_path": "../assets/website_images/spotify.png",
         "email": "admin@spotify.com",
-        "password": "password123",
+        "password": "spotiAdmin123",
     }
 )
 

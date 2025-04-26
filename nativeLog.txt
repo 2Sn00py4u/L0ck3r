@@ -1,0 +1,249 @@
+IO Error: File is already open in 
+C:\Users\Felix\AppData\Local\Programs\Python\Python312\python.exe (PID 5152)
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 217
+loaded_message: {'requestType': 'delete_passwordCard', 'uname': 'admin', 'password_card': {'card_id': '4', 'card_title': 'Instagram', 'img_path': '../assets/website_images/instagram.png', 'email': 'admin@instagram.com', 'password': 'password123'}, 'valid': True}
+msg received
+received_message: {'requestType': 'delete_passwordCard', 'uname': 'admin', 'password_card': {'card_id': '4', 'card_title': 'Instagram', 'img_path': '../assets/website_images/instagram.png', 'email': 'admin@instagram.com', 'password': 'password123'}, 'valid': True}
+deleting card...
+{'card_id': '1', 'card_title': 'L0CK3R', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@l0ck3r.com', 'password': 'admin'}
+ {'card_id': '4', 'card_title': 'Instagram', 'img_path': '../assets/website_images/instagram.png', 'email': 'admin@instagram.com', 'password': 'password123'}
+False
+{'card_id': '2', 'card_title': 'Youtube', 'img_path': '../assets/website_images/youtube.png', 'email': 'admin@youtube.com', 'password': 'password123'}
+ {'card_id': '4', 'card_title': 'Instagram', 'img_path': '../assets/website_images/instagram.png', 'email': 'admin@instagram.com', 'password': 'password123'}
+False
+{'card_id': '3', 'card_title': 'Google', 'img_path': '../assets/website_images/google.png', 'email': 'admin@google.com', 'password': 'password123'}
+ {'card_id': '4', 'card_title': 'Instagram', 'img_path': '../assets/website_images/instagram.png', 'email': 'admin@instagram.com', 'password': 'password123'}
+False
+{'card_id': '4', 'card_title': 'Instagram', 'img_path': '../assets/website_images/instagram.png', 'email': 'admin@instagram.com', 'password': 'password123'}
+ {'card_id': '4', 'card_title': 'Instagram', 'img_path': '../assets/website_images/instagram.png', 'email': 'admin@instagram.com', 'password': 'password123'}
+True
+1
+2
+deleted{'card_id': '4', 'card_title': 'Spotify', 'img_path': '../assets/website_images/spotify.png', 'email': 'admin@spotify.com', 'password': 'password123'}DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 81
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '26.4.2025, 13:15:48', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '26.4.2025, 13:15:48', 'uname': 'admin', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 62
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admi', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admi', 'valid': True}
+loginRequest
+uname:admin
+passwd:admi
+user not registered: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admi', 'valid': True}
+succesfully send: ['admin', 'admi']
+ access: False
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 208
+loaded_message: {'requestType': 'delete_passwordCard', 'uname': 'admin', 'password_card': {'card_id': '3', 'card_title': 'Google', 'img_path': '../assets/website_images/google.png', 'email': 'admin@google.com', 'password': 'password123'}, 'valid': True}
+msg received
+received_message: {'requestType': 'delete_passwordCard', 'uname': 'admin', 'password_card': {'card_id': '3', 'card_title': 'Google', 'img_path': '../assets/website_images/google.png', 'email': 'admin@google.com', 'password': 'password123'}, 'valid': True}
+deleting card...
+{'card_id': '1', 'card_title': 'L0CK3R', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@l0ck3r.com', 'password': 'admin'}
+ {'card_id': '3', 'card_title': 'Google', 'img_path': '../assets/website_images/google.png', 'email': 'admin@google.com', 'password': 'password123'}
+False
+{'card_id': '2', 'card_title': 'Youtube', 'img_path': '../assets/website_images/youtube.png', 'email': 'admin@youtube.com', 'password': 'password123'}
+ {'card_id': '3', 'card_title': 'Google', 'img_path': '../assets/website_images/google.png', 'email': 'admin@google.com', 'password': 'password123'}
+False
+{'card_id': '3', 'card_title': 'Google', 'img_path': '../assets/website_images/google.png', 'email': 'admin@google.com', 'password': 'password123'}
+ {'card_id': '3', 'card_title': 'Google', 'img_path': '../assets/website_images/google.png', 'email': 'admin@google.com', 'password': 'password123'}
+True
+1
+2
+deleted{'card_id': '3', 'card_title': 'Spotify', 'img_path': '../assets/website_images/spotify.png', 'email': 'admin@spotify.com', 'password': 'password123'}DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 81
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '26.4.2025, 13:16:37', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '26.4.2025, 13:16:37', 'uname': 'admin', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 81
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '26.4.2025, 14:12:18', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '26.4.2025, 14:12:18', 'uname': 'admin', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 81
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '26.4.2025, 14:14:15', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '26.4.2025, 14:14:15', 'uname': 'admin', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 81
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '26.4.2025, 14:17:07', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '26.4.2025, 14:17:07', 'uname': 'admin', 'valid': True}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected

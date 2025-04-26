@@ -28,14 +28,15 @@ body{
 }
 
 .side-menu-icon-container{
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 10px;
     display: flex;
     padding: 2%;
     justify-content: center;
     align-items: center;
     transition: 0.3s;
+    padding: 5%;
 }
 .side-menu-icon-container:hover{
     cursor: pointer;
@@ -43,9 +44,8 @@ body{
     transform: scale(1.1);
 }
 .side-menu-icons{
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
+    width: 90%;
+    height: 90%;
 }
 
 #content-container{
@@ -161,6 +161,7 @@ body{
     background-color: #432232;
     border: #f0f8ff 1px solid;
     box-shadow: 0 0 15px #a30147;
+    pointer-events: auto !important;
 }
 
 .logoutloader {
@@ -179,3 +180,55 @@ body{
 @keyframes l1 {to{opacity: 0}}
 
 
+.passwordInfo{
+    background-color: #191a2d;
+    border: #f0f8ff 1px solid;
+    box-shadow: 0 0 15px #0101a3;
+    pointer-events: auto !important;
+}
+
+.passwordInfo-option-buttons{
+    height: 40px;
+    width: 40px; 
+    border: #f0f8ff 1px solid; 
+    border-radius: 15px;
+    box-shadow: 0 0 5px #191a2d;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.passwordInfo-option-buttons:hover{
+    cursor: pointer;
+    transition: 0.3s;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #0101a3;
+}
+
+#add-button{
+    position: fixed;
+    bottom: 30px;   /* distance from bottom */
+    right: 30px;    /* distance from right */
+    z-index: 10;  /* very high so it's on top */
+    padding: 2%;
+    border-radius: 60%;
+    background-color: #191a2d; 
+    border: #f0f8ff 2px solid; 
+    box-shadow: 0 0 5px #191a2d;
+    height: 60px;
+    width: 60px;
+    transition: 0.3s;
+}
+
+#add-button:hover{
+    cursor: pointer;
+    transition: 0.3s;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #0101a3;
+}
+
+#add-button img{
+    width: 95%;
+    height: 95%;
+}

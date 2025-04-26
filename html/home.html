@@ -13,7 +13,7 @@
                 <div class="side-menu-icon-container" style="margin-bottom: 30px;">
                     <img src="../assets/home/side-menu/user.png" alt="User" class="side-menu-icons">    
                 </div>
-                <div class="side-menu-icon-container" style="margin-top: 30px">
+                <div class="side-menu-icon-container" style="margin-top: 30px; margin-bottom: 30px;">
                     <img src="../assets/home/side-menu/search.png" alt="Search" class="side-menu-icons">
                 </div>
             </div>
@@ -28,6 +28,9 @@
         </div>
         <div id="content-container">
             <!--Content-->
+            <div id="add-button">
+                <img src="../assets/home/side-menu/plus.png" alt="Add">
+            </div>
         </div>
     </div>
 
@@ -46,11 +49,11 @@
     <!--Card Template-->
     <script id="preview-card-template" type="text/template">
         <div class="preview-password-card" id="preview-password-card-{{card_id}}">
-            <div class="card-preview-image">
+            <div class="card-preview-image" data-bs-toggle="modal" data-bs-target="#password-info-{{card_id}}">
                 <img src="{{img_path}}" id="card-image-{{card_id}}" alt="Card Image">
             </div>
             <div class="preview-card-body">
-                <div class="card-preview-content">
+                <div class="card-preview-content" data-bs-toggle="modal" data-bs-target="#password-info-{{card_id}}">
                     <h6 style="font-size: 18px; border-bottom: #f0f8ff 1px solid;"><b>{{card_title}}</b></h6>
                     <label for="email-card-{{card_id}}" style="font-size: 11px;">Email/Username:</label>
                     <p id="email-card-{{card_id}}" style="font-size: 16px;">{{email}}</p>
@@ -60,7 +63,7 @@
                         <img src="../assets/home/delete.png" alt="Card Image">
                     </div>
                     
-                    <!-- Modal -->
+                    <!-- Delete Modal -->
                     <div class="modal fade" id="delete-warning-{{card_id}}" tabindex="-1" aria-labelledby="delete-warning-{{card_id}}" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content deleteWarning">
@@ -79,8 +82,43 @@
                     </div>
                 </div>
             </div>
-        </div>
+            <!-- Password-info -->
+            <div class="modal fade" id="password-info-{{card_id}}" tabindex="-1" aria-labelledby="password-info-{{card_id}}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content passwordInfo">
+                        <div class="modal-header" style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1;">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">{{card_title}}</h1>
+                            </div>
+                            <div class="passwordInfo-option-buttons" id="view-password-btn-{{card_id}}">
+                                <img src="../assets/home/hide.png" id="view-password-btnImage-{{card_id}}" style="width: 60%; height: 60%;" alt="">
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="passwordInfo-credential-form" id="credential-form-{{card_id}}">
+                                <form>
+                                    <div class="mb-3 input-group-md">
+                                        <label for="login_unameInput" class="form-label">Email/Username:</label>
+                                        <input type="text" class="form-control" id="emailInfo" value="{{email}}" required>
+                                    </div>
+                                    <div class="mb-3 input-group-md">
+                                        <label for="login_passwdInput" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="passwordInfo-{{card_id}}" value="{{password}}" required>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary" id="save-changes-{{card_id}}">Apply</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>   
     </script>
+
+    
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../js/home.js"></script>
 </body>

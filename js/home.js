@@ -1,16 +1,17 @@
-//localStorage.removeItem("userdata")
+// Checking userdata in local storage and redirecting to login page if not found
 let userdata = JSON.parse(localStorage.getItem("userdata"));
 if (userdata === null) {
     window.location.href = "login.html";
 }
 
+// updating the password_card id in the userdata object
 for (let i = 1; i < userdata.password_cards.length + 1; i++){
     userdata.password_cards[i-1].card_id = i.toString();
 };
 localStorage.setItem("userdata", (JSON.stringify(userdata)));
 
 
-
+// port communication
 let homepage = document.getElementById("homepage");
 let port = chrome.runtime.connectNative('com.native.locker');
 
@@ -39,13 +40,17 @@ port.onMessage.addListener(function (response) {
         };
     };
 });
+
 port.onDisconnect.addListener(function () {
     if(chrome.runtime.lastError){
         console.log(chrome.runtime.lastError);
     }
 });
 
+
+// Loading the home page content using Mustache.js
 document.addEventListener("DOMContentLoaded", function() {
+    // adding preview-password cards to the home page
     const homeTemplate = document.getElementById("content-template").innerHTML;
     let greeting_data = {
         user: userdata.user,
@@ -66,12 +71,31 @@ document.addEventListener("DOMContentLoaded", function() {
         };
         template = document.getElementById("preview-password-cards-container");
         template.innerHTML += Mustache.render(cardTemplate, password_data);
-    };  
+    };
 
+    // adding event listeners to the password cards show/hide buttons
+    for (let i = 1; i < userdata.password_cards.length + 1; i++){
+        let passwordInfo_showId = "view-password-btn-" + i.toString();
+        document.getElementById(passwordInfo_showId).addEventListener("click", function() {
+            let passwordInfo_id = "passwordInfo-" + i.toString();
+            let passwordInput = document.getElementById(passwordInfo_id);
+            let viewButton_img_id = "view-password-btnImage-" + i.toString();
+            let viewButton_img  = document.getElementById(viewButton_img_id);
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                viewButton_img.src = "../assets/home/show.png";
+            } else {
+                passwordInput.type = "password";
+                viewButton_img.src = "../assets/home/hide.png";
+            };
+        });
+    }
+
+    // adding event listeners to the password cards delete buttons
     for (let i = 1; i < userdata.password_cards.length +1; i++) {
         let delete_button_id = "delete-image-" + i.toString();
-        //alert(delete_button_id)
         let delete_button = document.getElementById(delete_button_id);
+
         delete_button.addEventListener("click", function(){
             let warnModal_id = "delete-warning-" + i.toString();
             let warnModal = new bootstrap.Modal(document.getElementById(warnModal_id), {
@@ -94,13 +118,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 catch (Error){
                     console.log(Error);
                 }
-                
             }); 
         });
     };
 });
 
 
+// side menu
+
+// add Eventlistener logout button
 let logoutButton = document.getElementById("logout_button")
 logoutButton.addEventListener("click", function() {
     var logoutRequest = {
