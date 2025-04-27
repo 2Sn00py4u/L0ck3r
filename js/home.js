@@ -73,6 +73,27 @@ document.addEventListener("DOMContentLoaded", function() {
         template.innerHTML += Mustache.render(cardTemplate, password_data);
     };
 
+    // adding event listeners to the password cards copy buttons
+    for (let i = 1; i < userdata.password_cards.length + 1; i++){
+        let passwordInfo_showId = "copy-password-btn-" + i.toString();
+        let copyButton_img_id = "copy-password-btnImage-" + i.toString();
+        let copyButton_img  = document.getElementById(copyButton_img_id);
+        document.getElementById(passwordInfo_showId).addEventListener("click", function() {
+            let passwordInfo_id = "passwordInfo-" + i.toString();
+            let password = document.getElementById(passwordInfo_id).value;
+            navigator.clipboard.writeText(password).then(() => {
+                copyButton_img.src = "../assets/home/check.png";
+                copyButton_img.style.opacity = 1;
+                setTimeout(() => {
+                    copyButton_img.src = "../assets/home/copy.png";
+                    copyButton_img.style.opacity = 1;
+                }, 200);
+              }).catch(err => {
+                console.error('Failed to copy text: ', err);
+              });
+        });
+    }
+
     // adding event listeners to the password cards show/hide buttons
     for (let i = 1; i < userdata.password_cards.length + 1; i++){
         let passwordInfo_showId = "view-password-btn-" + i.toString();
