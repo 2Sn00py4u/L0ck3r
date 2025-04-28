@@ -12,7 +12,7 @@ USERDATA = {
             "card_id": "1",
             "card_title": "L0CK3R",
             "img_path": "../assets/icons/icon128.png",
-            "email": "admin@l0ck3r.com",
+            "email": "admin",
             "password": "admin",
         }
     ]
@@ -51,6 +51,16 @@ def R3gister(DBMS: db.DBMS, username: str, password: str) -> bool:
         r3gistert = False
     return r3gistert
 
+def updateLogin(DBMS: db.DBMS, username: str, new_username: str, password: str) -> bool:
+    L0CK3R_DBMS = DBMS
+    try:
+        L0CK3R_DBMS.execute(f"""UPDATE users SET password = ? WHERE username = ?""", False, cy.encrypting(password), username)
+        L0CK3R_DBMS.execute(f"""UPDATE users SET username = ? WHERE username = ?""", False, new_username, username)
+        return True
+    except Exception as e:
+        print(e)
+        return False
+
 def readUserdata(DBMS: db.DBMS, username: str) -> dict:
     L0CK3R_DBMS = DBMS
     try:
@@ -67,8 +77,10 @@ def setUserdata(DBMS: db.DBMS, username: str, userdata: dict) -> bool:
     except Exception as e:
         print(e)
         return False
-"""
+    
+""""  
 DMBS = build_L0CK3R_DB("backend\\l0ck3rdb.duckdb")
+
 
 print(readUserdata(DMBS, "admin"),type(readUserdata(DMBS, "admin")))
 
@@ -111,4 +123,7 @@ USERDATA["password_cards"].append(
 
 print(setUserdata(DMBS, "admin", USERDATA))
 print(readUserdata(DMBS, "admin"),type(readUserdata(DMBS, "admin")))
-"""
+
+print(readUserdata(DMBS, "admin"))
+
+#print(updateLogin(DMBS, "admin", "admin", "admin123"))"""

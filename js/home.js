@@ -1,3 +1,5 @@
+//localStorage.clear();
+
 // Checking userdata in local storage and redirecting to login page if not found
 let userdata = JSON.parse(localStorage.getItem("userdata"));
 if (userdata === null) {
@@ -36,6 +38,12 @@ port.onMessage.addListener(function (response) {
             };
             userdata = JSON.stringify(userdata);
             localStorage.setItem("userdata", userdata);
+            window.location.href = "home.html";
+        };
+        if (response.editPasswordCard && response.editPasswordCard === true){
+            let i = localStorage.getItem("card_id");
+            let infoModal_id = "password-info-" + i;
+            let infoModal = document.getElementById(infoModal_id); 
             window.location.href = "home.html";
         };
     };
@@ -111,6 +119,30 @@ document.addEventListener("DOMContentLoaded", function() {
             };
         });
     }
+
+    // adding event listeners to the password cards edit buttons
+    for (let i = 1; i < userdata.password_cards.length +1; i++) {
+        let edit_button_id = "save-changes-" + i.toString();
+        let edit_button = document.getElementById(edit_button_id);
+
+        edit_button.addEventListener("click", function(){
+            let newUsername_id = "emailInfo-" + i.toString()
+            let newUsername = document.getElementById(newUsername_id).value;
+            let newPassword_id = "passwordInfo-" + i.toString()
+            let newPassword = document.getElementById(newPassword_id).value;
+
+            userdata.password_cards[i-1].email = newUsername;
+            userdata.password_cards[i-1].password = newPassword;
+            localStorage.setItem("userdata", JSON.stringify(userdata));
+            localStorage.setItem("card_id", i.toString());
+            let edit_passwdCard_message = {
+                requestType: "edit_passwordCard",
+                uname: userdata.user,
+                password_card: userdata.password_cards[i-1],
+            };
+            port.postMessage(edit_passwdCard_message);
+        });
+    };
 
     // adding event listeners to the password cards delete buttons
     for (let i = 1; i < userdata.password_cards.length +1; i++) {

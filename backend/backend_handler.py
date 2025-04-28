@@ -60,13 +60,17 @@ def main():
             logging(f"received_message: {received_message}\n", "a")
             requestType = received_message['requestType']
             uname = received_message['uname']
+            logging(f"requestType: {requestType}\n", "a")
             if requestType == "logoutRequest":
+                logging("logging out...\n", "a")
                 userdata = dbf.readUserdata(DBMS, uname)
+                logging(f"userdata: {userdata}\n", "a")
                 if userdata != None:
                     userdata["latest_access"] = received_message['timestamp']
                     dbf.setUserdata(DBMS, uname, userdata)
                     sendMessage({"logout": True})
                     logging(f"logout\n", "a")
+                    
                     
             elif requestType == "delete_passwordCard":
                 logging("deleting card...\n", "a")
@@ -84,8 +88,28 @@ def main():
                             dbf.setUserdata(DBMS, uname, userdata)
                             sendMessage({"deletedPasswordCard": True})
                             logging(f"deleted{userdata["password_cards"][i]}", "a")
-                            break                    
-                
+                            break
+                                            
+            elif requestType == "edit_passwordCard":
+                logging("editing card...\n", "a")
+                userdata = dbf.readUserdata(DBMS, uname)
+                if userdata != None:
+                    userdata["user"] = received_message["password_card"]["email"]
+                    for i in range(len(userdata["password_cards"])):
+                        logging(f"{userdata["password_cards"][i]}\n {received_message["password_card"]}\n","a")
+                        logging(f"{str(userdata["password_cards"][i] == received_message["password_card"])}\n", "a")
+                        if userdata["password_cards"][i]["card_id"] == received_message["password_card"]["card_id"]:
+                            userdata["password_cards"][i]["email"] = received_message["password_card"]["email"]
+                            userdata["password_cards"][i]["password"] = received_message["password_card"]["password"]
+                            edited = True
+                            if userdata["password_cards"][i]["card_title"] == "L0CK3R":
+                                edited = dbf.updateLogin(DBMS, uname, received_message["password_card"]["email"], received_message["password_card"]["password"]) 
+                            logging("1\n","a")
+                            dbf.setUserdata(DBMS, uname, userdata)
+                            logging(f"edited: {edited}\n","a")
+                            sendMessage({"editPasswordCard": edited})
+                            logging(f"edited{userdata["password_cards"][i]}", "a")
+                            break     
             else:
                 passwd = received_message['passwd']
                 logging(f"{requestType}\nuname:{uname}\npasswd:{passwd}\n", "a")

@@ -110,8 +110,12 @@ class DBMS:
         except Exception as e:
             raise Exception(f"error deleting self:\n{e}")
     
-    def execute(self, command:str, pdOutput: bool= False) -> list:
-        result = self.__dbConnection.execute(command).fetchall()
+    def execute(self, command:str, pdOutput: bool= False, *args) -> list:
+        if not args:
+            result = self.__dbConnection.execute(command).fetchall()
+        else:
+            result = self.__dbConnection.execute(command, args).fetchall()
+        
         if not pdOutput:
             return result
         else:
@@ -127,4 +131,4 @@ class DBMS:
         return "class for interacting with a DB via duckdb"
 
 #dbms = DBMS("backend\\l0ck3rdb.duckdb")
-#print(dbms.execute("SELECT * FROM users WHERE username = 'admin'", False))
+#print(dbms.execute("SELECT * FROM users", True))
