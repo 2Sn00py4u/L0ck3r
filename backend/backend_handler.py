@@ -94,7 +94,6 @@ def main():
                 logging("editing card...\n", "a")
                 userdata = dbf.readUserdata(DBMS, uname)
                 if userdata != None:
-                    userdata["user"] = received_message["password_card"]["email"]
                     for i in range(len(userdata["password_cards"])):
                         logging(f"{userdata["password_cards"][i]}\n {received_message["password_card"]}\n","a")
                         logging(f"{str(userdata["password_cards"][i] == received_message["password_card"])}\n", "a")
@@ -103,13 +102,23 @@ def main():
                             userdata["password_cards"][i]["password"] = received_message["password_card"]["password"]
                             edited = True
                             if userdata["password_cards"][i]["card_title"] == "L0CK3R":
-                                edited = dbf.updateLogin(DBMS, uname, received_message["password_card"]["email"], received_message["password_card"]["password"]) 
+                                edited = dbf.updateLogin(DBMS, uname, received_message["password_card"]["email"], received_message["password_card"]["password"])
+                                if edited == False:
+                                    sendMessage({"editPasswordCard": edited, "uname": userdata["user"]})
+                                    logging(f"edited: {edited}\n","a")
+                                    logging(f'editPasswordCard: {edited}\nuname: {userdata["user"]}', "a")
+                                    break
+                                userdata["user"] = received_message["password_card"]["email"]
+                                uname = received_message["password_card"]["email"]
+                                 
                             logging("1\n","a")
-                            dbf.setUserdata(DBMS, uname, userdata)
+                            setted = dbf.setUserdata(DBMS, uname, userdata)
+                            logging(f"{str(setted)} -- uname {uname}\n","a")
                             logging(f"edited: {edited}\n","a")
-                            sendMessage({"editPasswordCard": edited})
-                            logging(f"edited{userdata["password_cards"][i]}", "a")
-                            break     
+                            sendMessage({"editPasswordCard": edited, "uname": userdata["user"]})
+                            logging(f"edited{userdata}", "a")
+                            logging(f"reading userdata: {dbf.readUserdata(DBMS, uname)}\n", "a")
+                            break
             else:
                 passwd = received_message['passwd']
                 logging(f"{requestType}\nuname:{uname}\npasswd:{passwd}\n", "a")

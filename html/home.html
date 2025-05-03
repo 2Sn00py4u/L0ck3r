@@ -58,7 +58,7 @@
                     <label for="email-card-{{card_id}}" style="font-size: 11px;">Email/Username:</label>
                     <p id="email-card-{{card_id}}" style="font-size: 16px;">{{email}}</p>
                 </div>
-                <div class="preview-card-options">
+                <div class="preview-card-options" id="preview-card-options-{{card_id}}">
                     <div class="delete-preview-image" id="delete-image-{{card_id}}">
                         <img src="../assets/home/delete.png" alt="Card Image">
                     </div>
@@ -118,6 +118,21 @@
                     </div>
                 </div>
             </div>
+            <div class="modal fade" id="usernameInUse" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content deleteWarning">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Error</h1>
+                        </div>
+                        <div class="modal-body">
+                            This username is already in use. Please choose another one.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div> 
         </div>   
     </script>
 

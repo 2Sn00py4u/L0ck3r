@@ -40,12 +40,19 @@ port.onMessage.addListener(function (response) {
             localStorage.setItem("userdata", userdata);
             window.location.href = "home.html";
         };
-        if (response.editPasswordCard && response.editPasswordCard === true){
-            let i = localStorage.getItem("card_id");
-            let infoModal_id = "password-info-" + i;
-            let infoModal = document.getElementById(infoModal_id); 
-            window.location.href = "home.html";
-        };
+        
+        if (response.editPasswordCard !== undefined){
+            if (response.editPasswordCard === true){
+                userdata.user = response.uname;
+                localStorage.setItem("userdata", JSON.stringify(userdata));
+                window.location.href = "home.html";
+            }
+            if (response.editPasswordCard === false){
+                userdata = JSON.parse(localStorage.getItem("userdataBackup"));
+                localStorage.setItem("L0CK3R_usernameInUse", true);
+                window.location.href = "home.html";
+            }
+        };  
     };
 });
 
@@ -131,10 +138,11 @@ document.addEventListener("DOMContentLoaded", function() {
             let newPassword_id = "passwordInfo-" + i.toString()
             let newPassword = document.getElementById(newPassword_id).value;
 
+            //userdata.user = newUsername;
+            localStorage.setItem("userdataBackup", JSON.stringify(userdata));
+            localStorage.setItem("card_id", i.toString());
             userdata.password_cards[i-1].email = newUsername;
             userdata.password_cards[i-1].password = newPassword;
-            localStorage.setItem("userdata", JSON.stringify(userdata));
-            localStorage.setItem("card_id", i.toString());
             let edit_passwdCard_message = {
                 requestType: "edit_passwordCard",
                 uname: userdata.user,
@@ -144,8 +152,27 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     };
 
+    if (localStorage.getItem("L0CK3R_usernameInUse") === "true"){
+        `
+        let card_id = localStorage.getItem("card_id");
+        let password_info_id = "password-info-" + card_id;
+        let password_info_Modal = new bootstrap.Modal(document.getElementById(password_info_id), {
+            backdrop: 'static',
+            keyboard: false
+        });
+        password_info_Modal.show();`
+        let usernameInUseModal = new bootstrap.Modal(document.getElementById("usernameInUse"), {
+            backdrop: 'static',
+            keyboard: false
+        });
+        usernameInUseModal.show();
+        localStorage.removeItem("L0CK3R_usernameInUse");
+        localStorage.removeItem("card_id");
+    }
+
     // adding event listeners to the password cards delete buttons
-    for (let i = 1; i < userdata.password_cards.length +1; i++) {
+    document.getElementById("preview-card-options-1").remove();
+    for (let i = 2; i < userdata.password_cards.length +1; i++) {
         let delete_button_id = "delete-image-" + i.toString();
         let delete_button = document.getElementById(delete_button_id);
 
@@ -191,3 +218,8 @@ logoutButton.addEventListener("click", function() {
     homepage.innerHTML = "";
     homepage.classList.add("logoutloader");
 });
+
+
+
+    
+

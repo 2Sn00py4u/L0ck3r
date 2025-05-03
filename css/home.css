@@ -175,7 +175,7 @@ body{
     align-items: center;
 }
 .logoutloader:before {
-    content:"Securing data...";
+    content:"Weiss ich nicht, keine Ahnung...";
 }
 @keyframes l1 {to{opacity: 0}}
 
@@ -186,6 +186,7 @@ body{
     box-shadow: 0 0 15px #0101a3;
     pointer-events: auto !important;
 }
+
 
 .passwordInfo-option-buttons{
     height: 40px;

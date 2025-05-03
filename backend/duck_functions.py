@@ -18,6 +18,20 @@ USERDATA = {
     ]
 }
 
+TONI_USERDATA = {
+    "user": "toni",
+    "latest_access": "new",
+    "password_cards": [
+        {
+            "card_id": "1",
+            "card_title": "L0CK3R",
+            "img_path": "../assets/icons/icon128.png",
+            "email": "toni",
+            "password": "toni",
+        }
+    ]
+}
+
 def build_L0CK3R_DB(filePath: str) -> db.DBMS:
     L0CK3R_DBMS = db.DBMS(filePath)
     tables = L0CK3R_DBMS.getTables()
@@ -30,6 +44,7 @@ def build_L0CK3R_DB(filePath: str) -> db.DBMS:
     #  users(_id_, uname, passwd, registerDate)
     L0CK3R_DBMS.createTable("users",["username VARCHAR PRIMARY KEY NOT NULL", "password BLOB", "registerDate VARCHAR NOT NULL", "userdata JSON"])
     L0CK3R_DBMS.insertValues("users",[("admin",cy.encrypting("admin"),str(date.today()), USERDATA)])
+    L0CK3R_DBMS.insertValues("users",[("toni",cy.encrypting("toni"),str(date.today()), TONI_USERDATA)])
     return L0CK3R_DBMS
 
 def L0CKin(DBMS: db.DBMS, username: str, password: str) -> bool:
@@ -58,7 +73,7 @@ def updateLogin(DBMS: db.DBMS, username: str, new_username: str, password: str) 
         L0CK3R_DBMS.execute(f"""UPDATE users SET username = ? WHERE username = ?""", False, new_username, username)
         return True
     except Exception as e:
-        print(e)
+        #print(e)
         return False
 
 def readUserdata(DBMS: db.DBMS, username: str) -> dict:
@@ -78,11 +93,11 @@ def setUserdata(DBMS: db.DBMS, username: str, userdata: dict) -> bool:
         print(e)
         return False
     
-""""  
-DMBS = build_L0CK3R_DB("backend\\l0ck3rdb.duckdb")
+"""
+DBMS = build_L0CK3R_DB("backend\\l0ck3rdb.duckdb")
 
 
-print(readUserdata(DMBS, "admin"),type(readUserdata(DMBS, "admin")))
+#print(readUserdata(DBMS, "admin"),type(readUserdata(DBMS, "admin")))
 
 USERDATA["password_cards"].append(
     {
@@ -121,9 +136,9 @@ USERDATA["password_cards"].append(
     }
 )
 
-print(setUserdata(DMBS, "admin", USERDATA))
-print(readUserdata(DMBS, "admin"),type(readUserdata(DMBS, "admin")))
+print(setUserdata(DBMS, "admin", USERDATA))
+print(readUserdata(DBMS, "admin"),type(readUserdata(DBMS, "admin")))
 
-print(readUserdata(DMBS, "admin"))
+print(readUserdata(DBMS, "admin"))
 
-#print(updateLogin(DMBS, "admin", "admin", "admin123"))"""
+#print(updateLogin(DBMS, "admin1", "toni", "admin"))"""
