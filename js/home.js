@@ -52,7 +52,18 @@ port.onMessage.addListener(function (response) {
                 localStorage.setItem("L0CK3R_usernameInUse", true);
                 window.location.href = "home.html";
             }
-        };  
+        };
+        if (response.addedPasswordCard !== undefined){
+            if (response.addedPasswordCard === true){
+                localStorage.setItem("userdata", JSON.stringify(userdata));
+                localStorage.removeItem("userdataBackup");
+                window.location.href = "home.html";
+            }
+            if (response.addedPasswordCard === false){
+                userdata = JSON.parse(localStorage.getItem("userdataBackup"));
+                window.location.href = "home.html";
+            }
+        };
     };
 });
 
@@ -201,6 +212,61 @@ document.addEventListener("DOMContentLoaded", function() {
             }); 
         });
     };
+
+    document.getElementById("add-button").addEventListener("click", function() {
+        let addPasswordCardModal = new bootstrap.Modal(document.getElementById("add-password-modal"), {
+            backdrop: 'static',
+            keyboard: false
+        });
+        addPasswordCardModal.show();
+        let addPasswordCardButton = document.getElementById("add-Password");
+        addPasswordCardButton.addEventListener("click", function() {
+            let newPasswordCard = {
+                card_id: (userdata.password_cards.length + 1).toString(),
+                card_title: document.getElementById("Title-addPassword").value,
+                img_path: "../assets/icons/icon128.png",
+                email: document.getElementById("Email-addPassword").value,
+                password: document.getElementById("Password-addPassword").value,
+            };
+            localStorage.setItem("userdataBackup", JSON.stringify(userdata));
+            userdata.password_cards.push(newPasswordCard);
+            let add_passwdCard_message = {
+                requestType: "add_passwordCard",
+                uname: userdata.user,
+                password_card: newPasswordCard,
+            };
+            port.postMessage(add_passwdCard_message);
+        });
+    });
+    // copy add- password
+    let copyButton_img  = document.getElementById("copy-password-btnImage-addPassword");
+    document.getElementById("copy-password-btn-addPassword").addEventListener("click", function() {
+        let password = document.getElementById("Password-addPassword").value;
+        navigator.clipboard.writeText(password).then(() => {
+            copyButton_img.src = "../assets/home/check.png";
+            copyButton_img.style.opacity = 1;
+            setTimeout(() => {
+                copyButton_img.src = "../assets/home/copy.png";
+                copyButton_img.style.opacity = 1;
+            }, 200);
+            }).catch(err => {
+            console.error('Failed to copy text: ', err);
+            });
+    });
+
+
+    // hide/view add - password
+    document.getElementById("view-password-btn-addPassword").addEventListener("click", function() {
+        let passwordInput = document.getElementById("Password-addPassword");
+        let viewButton_img  = document.getElementById("view-password-btnImage-addPassword");
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            viewButton_img.src = "../assets/home/show.png";
+        } else {
+            passwordInput.type = "password";
+            viewButton_img.src = "../assets/home/hide.png";
+        };
+    });
 });
 
 

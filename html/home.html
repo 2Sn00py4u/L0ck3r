@@ -31,6 +31,46 @@
             <div id="add-button">
                 <img src="../assets/home/side-menu/plus.png" alt="Add">
             </div>
+            <!-- Add-Password -->
+            <div class="modal fade" id="add-password-modal" tabindex="-1" aria-labelledby="add-password-modal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content passwordInfo">
+                        <div class="modal-header" style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1;">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+                            </div>
+                            <div class="passwordInfo-option-buttons" id="copy-password-btn-addPassword">
+                                <img src="../assets/home/copy.png" id="copy-password-btnImage-addPassword" style="width: 60%; height: 60%; transition: opacity 0.3s ease;" alt="">
+                            </div>
+                            <div class="passwordInfo-option-buttons" id="view-password-btn-addPassword">
+                                <img src="../assets/home/hide.png" id="view-password-btnImage-addPassword" style="width: 60%; height: 60%; transition: opacity 0.3s ease;" alt="">
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="passwordInfo-credential-form" id="credential-form-addPassword">
+                                <form>
+                                    <div class="mb-3 input-group-md">
+                                        <label for="Title-addPassword" class="form-label">Title</label>
+                                        <input type="text" class="form-control" id="Title-addPassword" value="" placeholder="Netflix, Amazon, etc." required>
+                                    </div>
+                                    <div class="mb-3 input-group-md">
+                                        <label for="Email-addPassword" class="form-label">Email/Username</label>
+                                        <input type="text" class="form-control" id="Email-addPassword" value="" placeholder="user@example.com" required>
+                                    </div>
+                                    <div class="mb-3 input-group-md">
+                                        <label for="Password-addPassword" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="Password-addPassword" value="" placeholder="min 8 chars..." required>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary" id="add-Password">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -101,11 +141,11 @@
                             <div class="passwordInfo-credential-form" id="credential-form-{{card_id}}">
                                 <form>
                                     <div class="mb-3 input-group-md">
-                                        <label for="login_unameInput" class="form-label">Email/Username:</label>
+                                        <label for="emailInfo-{{card_id}}" class="form-label">Email/Username</label>
                                         <input type="text" class="form-control" id="emailInfo-{{card_id}}" value="{{email}}" required>
                                     </div>
                                     <div class="mb-3 input-group-md">
-                                        <label for="login_passwdInput" class="form-label">Password</label>
+                                        <label for="passwordInfo-{{card_id}}" class="form-label">Password</label>
                                         <input type="password" class="form-control" id="passwordInfo-{{card_id}}" value="{{password}}" required>
                                     </div>
                                 </form>

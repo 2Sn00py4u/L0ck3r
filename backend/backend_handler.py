@@ -119,6 +119,22 @@ def main():
                             logging(f"edited{userdata}", "a")
                             logging(f"reading userdata: {dbf.readUserdata(DBMS, uname)}\n", "a")
                             break
+                        
+            elif requestType == "add_passwordCard":
+                logging("adding card...\n", "a")
+                userdata = dbf.readUserdata(DBMS, uname)
+                if userdata != None:
+                    new_card = {
+                        "card_id": received_message["password_card"]["card_id"],
+                        "card_title": received_message["password_card"]["card_title"],
+                        "img_path": received_message["password_card"]["img_path"],
+                        "email": received_message["password_card"]["email"],
+                        "password": received_message["password_card"]["password"],
+                    }
+                    userdata["password_cards"].append(new_card)
+                    added = dbf.setUserdata(DBMS, uname, userdata)
+                    sendMessage({"addedPasswordCard": added})
+                    logging(f"added{userdata}\n", "a")
             else:
                 passwd = received_message['passwd']
                 logging(f"{requestType}\nuname:{uname}\npasswd:{passwd}\n", "a")

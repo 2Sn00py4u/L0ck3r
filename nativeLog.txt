@@ -1,2 +1,180 @@
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+requestType: loginRequest
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 203
+loaded_message: {'requestType': 'delete_passwordCard', 'uname': 'admin', 'password_card': {'card_id': '6', 'card_title': 'Netflix', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@netflix.com', 'password': 'password1234'}, 'valid': True}
+msg received
+received_message: {'requestType': 'delete_passwordCard', 'uname': 'admin', 'password_card': {'card_id': '6', 'card_title': 'Netflix', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@netflix.com', 'password': 'password1234'}, 'valid': True}
+requestType: delete_passwordCard
+deleting card...
+{'card_id': '1', 'card_title': 'L0CK3R', 'img_path': '../assets/icons/icon128.png', 'email': 'admin', 'password': 'admin'}
+ {'card_id': '6', 'card_title': 'Netflix', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@netflix.com', 'password': 'password1234'}
+False
+{'card_id': '2', 'card_title': 'Youtube', 'img_path': '../assets/website_images/youtube.png', 'email': 'admin@youtube.com', 'password': 'YTadmin123'}
+ {'card_id': '6', 'card_title': 'Netflix', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@netflix.com', 'password': 'password1234'}
+False
+{'card_id': '3', 'card_title': 'Google', 'img_path': '../assets/website_images/google.png', 'email': 'admin@google.com', 'password': 'googleAdmin123'}
+ {'card_id': '6', 'card_title': 'Netflix', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@netflix.com', 'password': 'password1234'}
+False
+{'card_id': '4', 'card_title': 'Instagram', 'img_path': '../assets/website_images/instagram.png', 'email': 'admin@instagram.com', 'password': 'instaAdmin123'}
+ {'card_id': '6', 'card_title': 'Netflix', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@netflix.com', 'password': 'password1234'}
+False
+{'card_id': '5', 'card_title': 'Spotify', 'img_path': '../assets/website_images/spotify.png', 'email': 'admin@spotify.com', 'password': 'spotiAdmin123'}
+ {'card_id': '6', 'card_title': 'Netflix', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@netflix.com', 'password': 'password1234'}
+False
+{'card_id': '6', 'card_title': 'Netflix', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@netflix.com', 'password': 'password1234'}
+ {'card_id': '6', 'card_title': 'Netflix', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@netflix.com', 'password': 'password1234'}
+True
+1
+2
+deleted{'card_id': '6', 'card_title': 'Amazon', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@amazon.com', 'password': 'password12345'}DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 202
+loaded_message: {'requestType': 'delete_passwordCard', 'uname': 'admin', 'password_card': {'card_id': '6', 'card_title': 'Amazon', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@amazon.com', 'password': 'password12345'}, 'valid': True}
+msg received
+received_message: {'requestType': 'delete_passwordCard', 'uname': 'admin', 'password_card': {'card_id': '6', 'card_title': 'Amazon', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@amazon.com', 'password': 'password12345'}, 'valid': True}
+requestType: delete_passwordCard
+deleting card...
+{'card_id': '1', 'card_title': 'L0CK3R', 'img_path': '../assets/icons/icon128.png', 'email': 'admin', 'password': 'admin'}
+ {'card_id': '6', 'card_title': 'Amazon', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@amazon.com', 'password': 'password12345'}
+False
+{'card_id': '2', 'card_title': 'Youtube', 'img_path': '../assets/website_images/youtube.png', 'email': 'admin@youtube.com', 'password': 'YTadmin123'}
+ {'card_id': '6', 'card_title': 'Amazon', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@amazon.com', 'password': 'password12345'}
+False
+{'card_id': '3', 'card_title': 'Google', 'img_path': '../assets/website_images/google.png', 'email': 'admin@google.com', 'password': 'googleAdmin123'}
+ {'card_id': '6', 'card_title': 'Amazon', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@amazon.com', 'password': 'password12345'}
+False
+{'card_id': '4', 'card_title': 'Instagram', 'img_path': '../assets/website_images/instagram.png', 'email': 'admin@instagram.com', 'password': 'instaAdmin123'}
+ {'card_id': '6', 'card_title': 'Amazon', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@amazon.com', 'password': 'password12345'}
+False
+{'card_id': '5', 'card_title': 'Spotify', 'img_path': '../assets/website_images/spotify.png', 'email': 'admin@spotify.com', 'password': 'spotiAdmin123'}
+ {'card_id': '6', 'card_title': 'Amazon', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@amazon.com', 'password': 'password12345'}
+False
+{'card_id': '6', 'card_title': 'Amazon', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@amazon.com', 'password': 'password12345'}
+ {'card_id': '6', 'card_title': 'Amazon', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@amazon.com', 'password': 'password12345'}
+True
+1
+2
+deleted{'card_id': '5', 'card_title': 'Spotify', 'img_path': '../assets/website_images/spotify.png', 'email': 'admin@spotify.com', 'password': 'spotiAdmin123'}DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 80
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '8.5.2025, 23:23:58', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '8.5.2025, 23:23:58', 'uname': 'admin', 'valid': True}
+requestType: logoutRequest
+logging out...
+userdata: {'user': 'admin', 'latest_access': '8.5.2025, 23:08:49', 'password_cards': [{'card_id': '1', 'card_title': 'L0CK3R', 'img_path': '../assets/icons/icon128.png', 'email': 'admin', 'password': 'admin'}, {'card_id': '2', 'card_title': 'Youtube', 'img_path': '../assets/website_images/youtube.png', 'email': 'admin@youtube.com', 'password': 'YTadmin123'}, {'card_id': '3', 'card_title': 'Google', 'img_path': '../assets/website_images/google.png', 'email': 'admin@google.com', 'password': 'googleAdmin123'}, {'card_id': '4', 'card_title': 'Instagram', 'img_path': '../assets/website_images/instagram.png', 'email': 'admin@instagram.com', 'password': 'instaAdmin123'}, {'card_id': '5', 'card_title': 'Spotify', 'img_path': '../assets/website_images/spotify.png', 'email': 'admin@spotify.com', 'password': 'spotiAdmin123'}]}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 63
+loaded_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'loginRequest', 'uname': 'admin', 'passwd': 'admin', 'valid': True}
+requestType: loginRequest
+loginRequest
+uname:admin
+passwd:admin
+succesfully send: ['admin', 'admin']
+ access: True
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 202
+loaded_message: {'requestType': 'add_passwordCard', 'uname': 'admin', 'password_card': {'card_id': '6', 'card_title': 'Netflix', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@netflix.com', 'password': 'admiNetflix123'}, 'valid': True}
+msg received
+received_message: {'requestType': 'add_passwordCard', 'uname': 'admin', 'password_card': {'card_id': '6', 'card_title': 'Netflix', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@netflix.com', 'password': 'admiNetflix123'}, 'valid': True}
+requestType: add_passwordCard
+adding card...
+added{'user': 'admin', 'latest_access': '8.5.2025, 23:23:58', 'password_cards': [{'card_id': '1', 'card_title': 'L0CK3R', 'img_path': '../assets/icons/icon128.png', 'email': 'admin', 'password': 'admin'}, {'card_id': '2', 'card_title': 'Youtube', 'img_path': '../assets/website_images/youtube.png', 'email': 'admin@youtube.com', 'password': 'YTadmin123'}, {'card_id': '3', 'card_title': 'Google', 'img_path': '../assets/website_images/google.png', 'email': 'admin@google.com', 'password': 'googleAdmin123'}, {'card_id': '4', 'card_title': 'Instagram', 'img_path': '../assets/website_images/instagram.png', 'email': 'admin@instagram.com', 'password': 'instaAdmin123'}, {'card_id': '5', 'card_title': 'Spotify', 'img_path': '../assets/website_images/spotify.png', 'email': 'admin@spotify.com', 'password': 'spotiAdmin123'}, {'card_id': '6', 'card_title': 'Netflix', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@netflix.com', 'password': 'admiNetflix123'}]}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 197
+loaded_message: {'requestType': 'add_passwordCard', 'uname': 'admin', 'password_card': {'card_id': '7', 'card_title': 'Amazon', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@amazon.com', 'password': 'adminzon123'}, 'valid': True}
+msg received
+received_message: {'requestType': 'add_passwordCard', 'uname': 'admin', 'password_card': {'card_id': '7', 'card_title': 'Amazon', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@amazon.com', 'password': 'adminzon123'}, 'valid': True}
+requestType: add_passwordCard
+adding card...
+added{'user': 'admin', 'latest_access': '8.5.2025, 23:23:58', 'password_cards': [{'card_id': '1', 'card_title': 'L0CK3R', 'img_path': '../assets/icons/icon128.png', 'email': 'admin', 'password': 'admin'}, {'card_id': '2', 'card_title': 'Youtube', 'img_path': '../assets/website_images/youtube.png', 'email': 'admin@youtube.com', 'password': 'YTadmin123'}, {'card_id': '3', 'card_title': 'Google', 'img_path': '../assets/website_images/google.png', 'email': 'admin@google.com', 'password': 'googleAdmin123'}, {'card_id': '4', 'card_title': 'Instagram', 'img_path': '../assets/website_images/instagram.png', 'email': 'admin@instagram.com', 'password': 'instaAdmin123'}, {'card_id': '5', 'card_title': 'Spotify', 'img_path': '../assets/website_images/spotify.png', 'email': 'admin@spotify.com', 'password': 'spotiAdmin123'}, {'card_id': '6', 'card_title': 'Netflix', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@netflix.com', 'password': 'admiNetflix123'}, {'card_id': '7', 'card_title': 'Amazon', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@amazon.com', 'password': 'adminzon123'}]}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+Invalidsend: {'valid': False}
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 205
+loaded_message: {'requestType': 'delete_passwordCard', 'uname': 'admin', 'password_card': {'card_id': '6', 'card_title': 'Netflix', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@netflix.com', 'password': 'admiNetflix123'}, 'valid': True}
+msg received
+received_message: {'requestType': 'delete_passwordCard', 'uname': 'admin', 'password_card': {'card_id': '6', 'card_title': 'Netflix', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@netflix.com', 'password': 'admiNetflix123'}, 'valid': True}
+requestType: delete_passwordCard
+deleting card...
+{'card_id': '1', 'card_title': 'L0CK3R', 'img_path': '../assets/icons/icon128.png', 'email': 'admin', 'password': 'admin'}
+ {'card_id': '6', 'card_title': 'Netflix', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@netflix.com', 'password': 'admiNetflix123'}
+False
+{'card_id': '2', 'card_title': 'Youtube', 'img_path': '../assets/website_images/youtube.png', 'email': 'admin@youtube.com', 'password': 'YTadmin123'}
+ {'card_id': '6', 'card_title': 'Netflix', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@netflix.com', 'password': 'admiNetflix123'}
+False
+{'card_id': '3', 'card_title': 'Google', 'img_path': '../assets/website_images/google.png', 'email': 'admin@google.com', 'password': 'googleAdmin123'}
+ {'card_id': '6', 'card_title': 'Netflix', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@netflix.com', 'password': 'admiNetflix123'}
+False
+{'card_id': '4', 'card_title': 'Instagram', 'img_path': '../assets/website_images/instagram.png', 'email': 'admin@instagram.com', 'password': 'instaAdmin123'}
+ {'card_id': '6', 'card_title': 'Netflix', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@netflix.com', 'password': 'admiNetflix123'}
+False
+{'card_id': '5', 'card_title': 'Spotify', 'img_path': '../assets/website_images/spotify.png', 'email': 'admin@spotify.com', 'password': 'spotiAdmin123'}
+ {'card_id': '6', 'card_title': 'Netflix', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@netflix.com', 'password': 'admiNetflix123'}
+False
+{'card_id': '6', 'card_title': 'Netflix', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@netflix.com', 'password': 'admiNetflix123'}
+ {'card_id': '6', 'card_title': 'Netflix', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@netflix.com', 'password': 'admiNetflix123'}
+True
+1
+2
+deleted{'card_id': '6', 'card_title': 'Amazon', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@amazon.com', 'password': 'adminzon123'}DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 200
+loaded_message: {'requestType': 'delete_passwordCard', 'uname': 'admin', 'password_card': {'card_id': '6', 'card_title': 'Amazon', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@amazon.com', 'password': 'adminzon123'}, 'valid': True}
+msg received
+received_message: {'requestType': 'delete_passwordCard', 'uname': 'admin', 'password_card': {'card_id': '6', 'card_title': 'Amazon', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@amazon.com', 'password': 'adminzon123'}, 'valid': True}
+requestType: delete_passwordCard
+deleting card...
+{'card_id': '1', 'card_title': 'L0CK3R', 'img_path': '../assets/icons/icon128.png', 'email': 'admin', 'password': 'admin'}
+ {'card_id': '6', 'card_title': 'Amazon', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@amazon.com', 'password': 'adminzon123'}
+False
+{'card_id': '2', 'card_title': 'Youtube', 'img_path': '../assets/website_images/youtube.png', 'email': 'admin@youtube.com', 'password': 'YTadmin123'}
+ {'card_id': '6', 'card_title': 'Amazon', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@amazon.com', 'password': 'adminzon123'}
+False
+{'card_id': '3', 'card_title': 'Google', 'img_path': '../assets/website_images/google.png', 'email': 'admin@google.com', 'password': 'googleAdmin123'}
+ {'card_id': '6', 'card_title': 'Amazon', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@amazon.com', 'password': 'adminzon123'}
+False
+{'card_id': '4', 'card_title': 'Instagram', 'img_path': '../assets/website_images/instagram.png', 'email': 'admin@instagram.com', 'password': 'instaAdmin123'}
+ {'card_id': '6', 'card_title': 'Amazon', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@amazon.com', 'password': 'adminzon123'}
+False
+{'card_id': '5', 'card_title': 'Spotify', 'img_path': '../assets/website_images/spotify.png', 'email': 'admin@spotify.com', 'password': 'spotiAdmin123'}
+ {'card_id': '6', 'card_title': 'Amazon', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@amazon.com', 'password': 'adminzon123'}
+False
+{'card_id': '6', 'card_title': 'Amazon', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@amazon.com', 'password': 'adminzon123'}
+ {'card_id': '6', 'card_title': 'Amazon', 'img_path': '../assets/icons/icon128.png', 'email': 'admin@amazon.com', 'password': 'adminzon123'}
+True
+1
+2
+deleted{'card_id': '5', 'card_title': 'Spotify', 'img_path': '../assets/website_images/spotify.png', 'email': 'admin@spotify.com', 'password': 'spotiAdmin123'}DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
+message_length: 80
+loaded_message: {'requestType': 'logoutRequest', 'timestamp': '8.5.2025, 23:33:33', 'uname': 'admin', 'valid': True}
+msg received
+received_message: {'requestType': 'logoutRequest', 'timestamp': '8.5.2025, 23:33:33', 'uname': 'admin', 'valid': True}
+requestType: logoutRequest
+logging out...
+userdata: {'user': 'admin', 'latest_access': '8.5.2025, 23:23:58', 'password_cards': [{'card_id': '1', 'card_title': 'L0CK3R', 'img_path': '../assets/icons/icon128.png', 'email': 'admin', 'password': 'admin'}, {'card_id': '2', 'card_title': 'Youtube', 'img_path': '../assets/website_images/youtube.png', 'email': 'admin@youtube.com', 'password': 'YTadmin123'}, {'card_id': '3', 'card_title': 'Google', 'img_path': '../assets/website_images/google.png', 'email': 'admin@google.com', 'password': 'googleAdmin123'}, {'card_id': '4', 'card_title': 'Instagram', 'img_path': '../assets/website_images/instagram.png', 'email': 'admin@instagram.com', 'password': 'instaAdmin123'}, {'card_id': '5', 'card_title': 'Spotify', 'img_path': '../assets/website_images/spotify.png', 'email': 'admin@spotify.com', 'password': 'spotiAdmin123'}]}
+logout
+DBMS disconnected
+C:\Users\Felix\Desktop\coolStuff\browser\extensions\L0ck3r\backend\dependencies\sqlite_scanner.duckdb_extension\sqlite_scanner.duckdb_extensionin loop
 Invalidsend: {'valid': False}
 DBMS disconnected

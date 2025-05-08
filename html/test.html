@@ -1,0 +1,54 @@
+<form>
+    <input type="file" id="imageUpload" accept="image/*" onchange="previewImage(event)">
+    <br>
+    <img id="imagePreview" src="" alt="Vorschau" style="max-width: 300px; display: none;">
+  </form>
+  
+  <script>
+    function previewImage(event) {
+      const file = event.target.files[0];
+      const preview = document.getElementById('imagePreview');
+      if (file) {
+        preview.src = URL.createObjectURL(file);
+        preview.style.display = 'block';
+      }
+    }
+  </script>
+  
+
+  <style>
+    #uploadBox {
+      width: 200px;
+      height: 100px;
+      background-color: #eee;
+      border: 2px dashed #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+  
+    #fileInput {
+      display: none;
+    }
+  </style>
+  
+  <div id="uploadBox">PNG oder JPG auswählen</div>
+  <input type="file" id="fileInput" accept=".png, .jpg, .jpeg">
+  
+  <script>
+    const uploadBox = document.getElementById('uploadBox');
+    const fileInput = document.getElementById('fileInput');
+  
+    uploadBox.addEventListener('click', () => {
+      fileInput.click();
+    });
+  
+    fileInput.addEventListener('change', () => {
+      const file = fileInput.files[0];
+      if (file) {
+        uploadBox.textContent = `Ausgewählt: ${file.name}`;
+      }
+    });
+  </script>
+  
