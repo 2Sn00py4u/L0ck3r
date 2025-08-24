@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>L0CK3R - login</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <div class="login" id="loginpage">
+        <div class="container-md" name="login-header" style="padding-bottom: 10%;">
+            <h2>Log in</h2>
+        </div>
+        <div class="container-md" name="login-form">
+            <form>
+                <div class="mb-3 input-group-lg">
+                    <label for="login_unameInput" class="form-label">Username</label>
+                    <input type="text" class="form-control loginput" id="login_unameInput" required>
+                </div>
+                <div class="mb-3 input-group-lg">
+                    <label for="login_passwdInput" class="form-label">Password</label>
+                    <input type="password" class="form-control loginput" id="login_passwdInput" required>
+                </div>
+                <div class="mb-3 form-check">
+                    <p>You don't have an account? <a href="register.html">Register</a></p>
+                </div>
+                <div class="login" id="loginButton-container" style="margin-top: 10%;">
+                    <button type="submit" class="btn btn-outline-primary btn-lg submitbutton" id="loginButton">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/background.js"></script>
+</body>
+</html>

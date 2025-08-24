@@ -1,0 +1,27 @@
+{
+    "version": "1.0",
+    "description": "SNET Protocol",
+    "type": "network/tcp",
+    "contributer": "2sn00py4u",
+    "protocol": {
+        "specification": {
+            "message_format": {
+                "header": {
+                    "type": "uint32",
+                    "length": 4
+                },
+                "payload": {
+                    "type": "json",
+                    "max-length": 10485760
+                },
+                "checksum": {
+                    "type": "sha256"
+                }
+            },
+            "encryption": {
+                "enabled": true,
+                "algorithm": "AES-256"
+            }
+        }
+    }
+}

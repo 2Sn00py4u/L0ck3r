@@ -1,0 +1,309 @@
+*{
+    color:#f0f8ff;
+}
+
+body{
+    min-width: 600px;
+    min-height: 500px;
+    background-color: #1e2234;
+    border-color: #f0f8ff;
+}
+input::placeholder {
+  font-style: italic;
+  color: #353744;
+}
+
+.page-container{
+    background-color: #1e2234;
+    display: flex;
+    height: 100vh;
+}
+
+#side-menu{
+    width: 80px;
+    background-color: #1e2233;
+    padding: 5%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.side-menu-icon-container{
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    padding: 2%;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    padding: 5%;
+}
+.side-menu-icon-container:hover{
+    cursor: pointer;
+    transition: 0.3s;
+    transform: scale(1.1);
+}
+.side-menu-icons{
+    width: 90%;
+    height: 90%;
+}
+
+#content-container{
+    flex: 1;
+    background-color: #191a2d;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.greeting{
+    height: max-content;
+    width: 100%;
+    border-bottom: #f0f8ff 1px solid;
+    margin-bottom: 4%;
+}
+
+#preview-password-cards-container{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #191a2d;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-width: 500px;
+}
+#preview-password-cards-container::-webkit-scrollbar {
+    display: none;
+}
+.preview-password-card{
+    display: flex;
+    width: 95%;
+    background-color: #191a2d;
+    border: #f0f8ff 1px solid;
+    border-radius: 10px;
+    height: 100px;
+    transition: 0.3s;
+    margin: 3%;
+}
+.preview-password-card:hover{
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    box-shadow: 0 0 15px #0101a3;
+    transition: 0.3s;
+}
+.card-preview-image{
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    border-right: #f0f8ff 1px solid;
+    background-color: #191a2d;
+    display: flex;
+    padding: 3%;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-preview-image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+
+.preview-card-body{
+    flex: 1;
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: 2%;
+    background-color: transparent;
+    color: #f0f8ff;
+    border-radius: 10px;
+}
+
+.card-preview-content{
+    flex: 1;
+}
+
+.preview-card-options{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.delete-preview-image{
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: #661e36 2px solid;
+    background-color: #ffd0e0;
+    display: flex;
+    padding: 2%;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+.delete-preview-image:hover{
+    cursor: pointer;
+    transition: 0.3s;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #a30147;
+}
+
+.delete-preview-image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.deleteWarning{
+    background-color: #432232;
+    border: #f0f8ff 1px solid;
+    box-shadow: 0 0 15px #a30147;
+    pointer-events: auto !important;
+}
+
+.logoutloader {
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 30px;
+    animation: l1 1s linear infinite alternate;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.logoutloader:before {
+    content:"Securing Data...";
+}
+@keyframes l1 {to{opacity: 0}}
+
+.loginloader {
+    margin-top: 5%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 3px solid #FFF;
+    border-right: 3px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+
+.passwordInfo{
+    background-color: #191a2d;
+    border: #f0f8ff 1px solid;
+    box-shadow: 0 0 15px #0101a3;
+    pointer-events: auto !important;
+}
+
+
+.passwordInfo-option-buttons{
+    height: 40px;
+    width: 40px; 
+    border: #f0f8ff 1px solid; 
+    border-radius: 15px;
+    box-shadow: 0 0 5px #191a2d;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.passwordInfo-option-buttons:hover{
+    cursor: pointer;
+    transition: 0.3s;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #0101a3;
+}
+
+.sync-dropdown-button{
+    height: 40px;
+    width: 40px; 
+    border: transparent 0px solid; 
+    border-radius: 15px;
+    box-shadow: 0 0 5px #191a2d;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.sync-dropdown-button:hover{
+    cursor: pointer;
+    transition: 0.3s;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #0101a3;
+}
+
+#add-button{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10;
+    padding: 2%;
+    border-radius: 60%;
+    background-color: #191a2d; 
+    border: #f0f8ff 2px solid; 
+    box-shadow: 0 0 5px #191a2d;
+    height: 60px;
+    width: 60px;
+    transition: 0.3s;
+}
+
+#add-button:hover{
+    cursor: pointer;
+    transition: 0.3s;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #0101a3;
+}
+
+#add-button img{
+    width: 95%;
+    height: 95%;
+}
+
+.dropdown-menu{
+    background-color: transparent; 
+    border: 0;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 5px #f0f8ff;
+}
+.dropdown-item{
+    color: #f0f8ff;
+}
+.dropdown-item:hover{
+    box-shadow: 0 0 15px #a5a5ff;
+}
+
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+.host-icons{
+    height: 40px;
+    width: 40px; 
+    border-radius: 15px;
+    box-shadow: 0 0 5px #191a2d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}

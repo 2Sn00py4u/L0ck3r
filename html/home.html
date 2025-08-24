@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <script src="../js/mustache.min.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="page-container" id="homepage">
+        <div id="side-menu">
+            <div class="side-menu-header">
+                <div class="side-menu-icon-container" style="margin-bottom: 30px;">
+                    <div class="dropend" style="background-color: transparent;">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: transparent; padding: 0; border: none; margin: 0; display: flex; align-items: center;">
+                            <img src="../assets/home/side-menu/user.png" alt="User" class="side-menu-icons">
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><h6 class="dropdown-header" href="#">My L0CK3R</h6></li>
+                            <li><a class="dropdown-item" id="L0CK3R_MyAccount" href="#">My Account</a></li>
+                            <li><a class="dropdown-item" id="L0CK3R_DeleteAccount" href="#">Delete Account</a></li>
+                        </ul>
+                    </div>   
+                </div>
+                <div class="side-menu-icon-container" style="margin-bottom: 30px;">
+                    <div class="dropend" style="background-color: transparent;">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: transparent; padding: 0; border: none; margin: 0; display: flex; align-items: center;">
+                            <img src="../assets/home/side-menu/search.png" alt="Search" class="side-menu-icons">
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><h6 class="dropdown-header" href="#">Search</h6></li>
+                            <li>
+                                <div class="mb-3 input-group-md" style="padding: 0 5% 0 5%; width: 300px;">
+                                    <input type="text" class="form-control" id="search-input" value="" placeholder="Start Typing..." required style="width: 100%;">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>   
+                </div>
+            </div>
+            <div class="side-menu-bottom">
+                <div class="side-menu-icon-container" style="margin-bottom: 30px;">
+                    <div class="dropend" style="background-color: transparent;">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: transparent; padding: 0; border: none; margin: 0; display: flex; align-items: center;">
+                            <img src="../assets/home/side-menu/more.png" alt="More" class="side-menu-icons"> 
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" id="autofill-toggle" href="#">Autofill: ON</a></li>
+                            <li><a class="dropdown-item" id="Sync_Devices" href="#">Sync Devices</a></li>
+                            <li><a class="dropdown-item" id="About" href="#">About</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="side-menu-icon-container" id="logout_button" style="margin-top: 30px;">
+                    <img src="../assets/home/side-menu/logout.png" alt="Logout" class="side-menu-icons">
+                </div>  
+            </div>
+        </div>
+        <!-- Delete Modal -->
+        <div class="modal fade" id="delete-account-warning" tabindex="-1" aria-labelledby="delete-account-warning" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content deleteWarning">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Are you shure you want to delete your <u>L0CK3R</u>?</h1>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3 input-group-md">
+                                <label for="Account-Delete-Input" class="form-label">Type: <i>'Delete my L0CK3R!' to confirm.</i></label>
+                                <input type="text" class="form-control" id="Account-Delete-Input" value="" placeholder="Delete my L0CK3R!" required>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Keep it</button>
+                        <button type="button" class="btn btn-danger" id="final-account-delete">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Modal -->
+        <div class="modal fade" id="About-LOCKER" tabindex="-1" aria-labelledby="About-LOCKER" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content passwordInfo">
+                    <div class="modal-header" style="display: flex; justify-content: space-between;">
+                        <div style="flex: 1;">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">About</h1>
+                        </div>
+                        <div class="passwordInfo-option-buttons" id="Github-Link">
+                            <img src="../assets/website_images/github.png" id="Github-Link-img" style="width: 60%; height: 60%; transition: opacity 0.3s ease;" alt="">
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="passwordInfo-credential-form">
+                            <h4>What is <u><i>L0CK3R</i></u>?</h4>
+                            <div style="border: #f0f8ff 1px solid; padding: 5%; margin: 5%; box-shadow: 0 0 3px #f0f8ff;">
+                                <i>"L0CK3R is a <b>Password-Manager-Browser-Extension</b> whichs origin it had in saved passwords in the browser and hating to need a Internet-Connection to get <b>one's own</b> credentials stored in other Password-Managers like Nord-Pass or Proton-Pass..."</i><br>
+                                So I developed <u><b>L0CK3R</b></u> to know exactly <i>how and where my personal data is stored.</i>
+                            </div>
+                            <h4>Releases</h4>
+                            <div style="border: #f0f8ff 1px solid; padding: 5%; margin: 5%; box-shadow: 0 0 3px #f0f8ff;">L0CK3R v.1.0 <i>beta</i> (<a href="https://github.com/2Sn00py4u">@2sn00py4u</a>)</div>
+                            <h4>Assets</h4>
+                            <div style="border: #f0f8ff 1px solid; padding: 5%; margin: 5%; box-shadow: 0 0 3px #f0f8ff;">           
+                                <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect"> Pixel perfect </a><br>  
+                                <a href="https://www.flaticon.com/free-icons/delete" title="delete icons">Delete icons created by Arkinasi - Flaticon</a><br>  
+                                <a href="https://www.flaticon.com/free-icons/instagram-logo" title="instagram logo icons">Instagram logo icons created by Pixel perfect - Flaticon</a><br>  
+                                <a href="https://www.flaticon.com/free-icons/google" title="google icons">Google icons created by Freepik - Flaticon</a><br>  
+                                <a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by Freepik - Flaticon</a><br>  
+                                <a href="https://www.flaticon.com/free-icons/discover" title="discover icons">Discover icons created by Smashicons - Flaticon</a><br>  
+                                <a href="https://www.flaticon.com/free-icons/more" title="more icons">More icons created by Kirill Kazachek - Flaticon</a><br>  
+                                <a href="https://www.flaticon.com/free-icons/logout" title="logout icons">Logout icons created by Afian Rochmah Afif - Flaticon</a><br>  
+                                <a href="https://www.flaticon.com/free-icons/password" title="password icons">Password icons created by Freepik - Flaticon</a><br>  
+                                <a href="https://www.flaticon.com/free-icons/plus" title="plus icons">Plus icons created by Fuzzee - Flaticon</a><br>  
+                                <a href="https://www.flaticon.com/free-icons/show-password" title="show password icons">Show password icons created by Stasy - Flaticon</a><br>  
+                                <a href="https://www.flaticon.com/free-icons/password" title="password icons">Password icons created by th studio - Flaticon</a><br>  
+                                <a href="https://www.flaticon.com/free-icons/copy" title="copy icons">Copy icons created by Maxim Basinski Premium - Flaticon</a><br>  
+                                <a href="https://www.flaticon.com/free-icons/tick" title="tick icons">Tick icons created by feen - Flaticon</a><br>  
+                                <a href="https://www.flaticon.com/free-icons/picture" title="picture icons">Picture icons created by Superndre - Flaticon</a><br>  
+                                <a href="https://www.flaticon.com/authors/riajulislam" title="riajulislam"> riajulislam </a><br>  
+                                <a href="https://www.flaticon.com/authors/freepik" title="Freepik"> Freepik </a><br>  
+                                <a href="https://www.flaticon.com/authors/uniconlabs" title="Uniconlabs"> Uniconlabs </a><br>  
+                                <a href="https://www.flaticon.com/free-icons/refresh" title="refresh icons">Refresh icons created by Uniconlabs - Flaticon</a><br>  
+                                <a href="https://www.flaticon.com/free-icons/signal" title="signal icons">Signal icons created by Freepik - Flaticon</a><br>  
+                                <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect"> Pixel perfect </a><br>  
+                                <a href="https://www.flaticon.com/free-icons/arrow" title="arrow icons">Arrow icons created by Freepik - Flaticon</a><br>
+                            </div>
+                            <h5>Easter Egg</h5>
+                            <div style="border: #f0f8ff 1px solid; padding: 5%; margin: 5%; box-shadow: 0 0 3px #f0f8ff;">
+                                <div class="mb-3 input-group-md">
+                                        <label for="easteregg-input" class="form-label">Enter Code:</label>
+                                        <input type="text" class="form-control" id="easteregg-input" value="" placeholder="Hint: Greece" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sync Modal-->
+        <div class="modal fade" id="Sync-LOCKER" tabindex="-1" aria-labelledby="Sync-LOCKER" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content passwordInfo">
+                    <div class="modal-header" style="display: flex; justify-content: space-between;">
+                        <div style="flex: 1;">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel"><b>Synchronize Devices</b></h1>
+                        </div>
+                        <div class="passwordInfo-option-buttons" id="connect-collapse-toggle" title="Connect to Host" data-bs-toggle="collapse" data-bs-target="#connect-collapse" aria-expanded="false" aria-controls="collapseExample">
+                            <img src="../assets/home/sync.png" id="connect-collapse-toggle-img" style="width: 60%; height: 60%; transition: opacity 0.3s ease;" alt="">
+                        </div>
+                        <div class="passwordInfo-option-buttons" id="host-collapse-toggle" title="Host Sync-Server" data-bs-toggle="collapse" data-bs-target="#host-collapse" aria-expanded="false" aria-controls="collapseExample">
+                            <img src="../assets/home/host.png" id="host-collapse-toggle-img" style="width: 60%; height: 60%; transition: opacity 0.3s ease;" alt="">
+                        </div>
+                        <div class="passwordInfo-option-buttons" id="Reload-btn" title="Reload Hosts">
+                            <img src="../assets/home/reload.png" style="width: 60%; height: 60%; transition: opacity 0.3s ease;" alt="">
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="passwordInfo-credential-form">
+                            <div class="collapse" id="connect-collapse" style="margin: 0 5% 5% 5%; background-color: transparent; box-shadow: 0 0 3px #0e4295;">
+                                <div class="card card-body" style="display: flex; justify-content: space-between; flex-direction: row; background-color: #041632; color: #3d9afa;">
+                                    <div style="flex: 1;" class="passwordInfo-credential-form">
+                                        <h5 style="display: flex; justify-content: center; align-items: center; margin-left: 1%; margin-right: 1%;">Connect to Server</h5>
+                                        <form style="margin-top: 2%;">
+                                            <div class="mb-3 input-group-sm">
+                                                <label for="IP-connectInput" class="form-label">IP-address</label>
+                                                <input type="text" class="form-control" id="IP-connectInput" value="" placeholder="192.168.xx.xx" required>
+                                            </div>
+                                            <div class="mb-3 input-group-sm">
+                                                <label for="Port-connectInput" class="form-label">Port</label>
+                                                <input type="text" class="form-control" id="Port-connectInput" value="50091" placeholder="default: 50091" required>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="passwordInfo-option-buttons" id="Connect-btn" title="Connect to Host">
+                                        <img src="../assets/home/sync.png" style="width: 60%; height: 60%; transition: opacity 0.3s ease;" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collapse" id="host-collapse" style="margin: 0 5% 5% 5%; background-color: transparent; box-shadow: 0 0 3px #0e4295;">
+                                <div class="card card-body" style="display: flex; justify-content: space-between; flex-direction: row; background-color: #041632; color: #3d9afa;">
+                                    <div style="flex: 1;" class="passwordInfo-credential-form">
+                                        <h5 style="display: flex; justify-content: center; align-items: center; margin-left: 1%; margin-right: 1%;">Host Sync-Server</h5>
+                                        <form style="margin-top: 2%;">
+                                            <div class="mb-3 input-group-sm">
+                                                <label for="Port-hostInput" class="form-label">Port</label>
+                                                <input type="text" class="form-control" id="Port-hostInput" value="50091" placeholder="default: 50091" required>
+                                            </div>
+                                            <div class="mb-3 input-group-sm">
+                                                <label for="Time-hostInput" class="form-label">Time</label>
+                                                <input type="number" class="form-control" id="Time-hostInput" min="10" max="60" placeholder="10 - 60 sec." required>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="passwordInfo-option-buttons" id="Host-btn" title="Connect to Host">
+                                        <img src="../assets/home/host.png" style="width: 60%; height: 60%; transition: opacity 0.3s ease;" alt="">
+                                    </div>
+                                    <div class="passwordInfo-option-buttons" id="cancelHost-btn" title="Stop Hosting" style="display:none;">
+                                        <img src="../assets/home/cancel.png" style="width: 60%; height: 60%; transition: opacity 0.3s ease;" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="sync-container">
+                                <div id="sync-loader" style="margin: 0 5% 5% 5%; display: flex; justify-content:center; align-items:center;">
+
+                                </div>
+                            </div>
+                            <h4><b>Known Hosts</b></h4>
+                            <div id="hosts-container">
+                                <!-- hosts -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="close-sync-btn">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- host template -->
+        <script id="host-template" type="text/template">
+            <div style="border: #f0f8ff 1px solid; padding: 5%; margin: 5%; box-shadow: 0 0 3px #f0f8ff; display: flex; justify-content: space-between;">
+                <div style="display: flex; flex:1; justify-content:end">
+                    <div style="flex:1;">
+                        <div class="host-icons">
+                            <img src="../assets/home/computer.png" style="width: 80%; height: 80%;" alt="">
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: center; align-items: center; padding-left: 10%; min-width: 200px;">
+                        <div>
+                            <b>{{host_ip}}</b>
+                        </div>
+                    </div>
+                </div>
+                <div style="flex:2; display:flex; justify-content:end;">
+                    <div class="passwordInfo-option-buttons" id="Sync-btn-{{host_id}}" title="Connect to Host" data-bs-toggle="collapse" data-bs-target="#connect-to-host-{{host_id}}-collapse" aria-expanded="false" aria-controls="collapseExample">
+                        <img src="../assets/home/sync.png" id="Sync-btn-img-{{host_id}}" style="width: 60%; height: 60%; transition: opacity 0.3s ease;" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="passwordInfo-credential-form">
+                <div class="collapse" id="connect-to-host-{{host_id}}-collapse" style="margin: 0 5% 5% 5%; background-color: transparent; box-shadow: 0 0 3px #0e4295;">
+                    <div class="card card-body" style="display: flex; justify-content: space-between; flex-direction: row; background-color: #041632; color: #3d9afa;">
+                        <div style="flex: 1;" class="passwordInfo-credential-form">
+                            <h5 style="display: flex; justify-content: center; align-items: center; margin-left: 1%; margin-right: 1%;">Connect to Server</h5>
+                            <form style="margin-top: 2%;">
+                                <div class="mb-3 input-group-sm">
+                                    <label for="IP-connectInput" class="form-label">IP-address</label>
+                                    <input type="text" class="form-control" id="IP-connectInput-{{host_id}}" value="{{host_ip}}" disabled>
+                                </div>
+                                <div class="mb-3 input-group-sm">
+                                    <label for="Port-connectInput" class="form-label">Port</label>
+                                    <input type="text" class="form-control" id="Port-connectInput-{{host_id}}" value="50091" placeholder="default: 50091" required>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="passwordInfo-option-buttons" id="Connect-btn-{{host_id}}" title="Connect to Host">
+                            <img src="../assets/home/sync.png" style="width: 60%; height: 60%; transition: opacity 0.3s ease;" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </script>
+
+        <div id="content-container">
+            <!--Content-->
+            <div id="add-button">
+                <img src="../assets/home/side-menu/plus.png" alt="Add">
+            </div>
+            <!-- Add-Password -->
+            <div class="modal fade" id="add-password-modal" tabindex="-1" aria-labelledby="add-password-modal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content passwordInfo">
+                        <div class="modal-header" style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1;">
+                                <div class="passwordInfo-option-buttons" id="Image-addPassword">
+                                    <img src="../assets/home/uploadImage.png" id="Image-btnImage-addPassword" style="width: 60%; height: 60%; transition: opacity 0.3s ease;" alt="">
+                                    <input type="file" id="Image-Input-addPassword" accept=".png, .jpg, .jpeg" style="display: none;">
+                                </div>
+                            </div>
+                            <div class="passwordInfo-option-buttons" id="copy-password-btn-addPassword">
+                                <img src="../assets/home/copy.png" id="copy-password-btnImage-addPassword" style="width: 60%; height: 60%; transition: opacity 0.3s ease;" alt="">
+                            </div>
+                            <div class="passwordInfo-option-buttons" id="view-password-btn-addPassword">
+                                <img src="../assets/home/hide.png" id="view-password-btnImage-addPassword" style="width: 60%; height: 60%; transition: opacity 0.3s ease;" alt="">
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="passwordInfo-credential-form" id="credential-form-addPassword">
+                                <form>
+                                    <div class="mb-3 input-group-md">
+                                        <label for="Title-addPassword" class="form-label">Title</label>
+                                        <input type="text" class="form-control" id="Title-addPassword" value="" placeholder="Netflix, Amazon, etc." required>
+                                    </div>
+                                    <div class="mb-3 input-group-md">
+                                        <label for="Email-addPassword" class="form-label">Email/Username</label>
+                                        <input type="text" class="form-control" id="Email-addPassword" value="" placeholder="user@example.com" required>
+                                    </div>
+                                    <div class="mb-3 input-group-md">
+                                        <label for="Password-addPassword" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="Password-addPassword" value="" placeholder="min 8 chars..." required>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary" id="add-Password">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Content Template-->
+    <script id="content-template" type="text/template">
+        <div class="greeting">
+            <h1 style="padding-bottom: 5%;"><b>Welcome back {{user}}!</b></h1>
+            <p>Latest access: {{latest_access}}</p>
+        </div>
+        <div id="preview-password-cards-container">
+            <h2 style="padding-bottom: 5%;"><b>Your Passwords</b></h2>
+            <!--Password-Cards-->
+        <div>
+    </script>
+
+    <!--Card Template-->
+    <script id="preview-card-template" type="text/template">
+        <div class="preview-password-card" id="preview-password-card-{{card_id}}">
+            <div class="card-preview-image" data-bs-toggle="modal" data-bs-target="#password-info-{{card_id}}">
+                <img src="{{img_path}}" id="card-image-{{card_id}}" alt="Card Image">
+            </div>
+            <div class="preview-card-body">
+                <div class="card-preview-content" data-bs-toggle="modal" data-bs-target="#password-info-{{card_id}}">
+                    <h6 style="font-size: 18px; border-bottom: #f0f8ff 1px solid;"><b>{{card_title}}</b></h6>
+                    <label for="email-card-{{card_id}}" style="font-size: 11px;">Email/Username:</label>
+                    <p id="email-card-{{card_id}}" style="font-size: 16px;">{{email}}</p>
+                </div>
+                <div class="preview-card-options" id="preview-card-options-{{card_id}}">
+                    <div class="delete-preview-image" id="delete-image-{{card_id}}">
+                        <img src="../assets/home/delete.png" alt="Card Image">
+                    </div>
+                    
+                    <!-- Delete Modal -->
+                    <div class="modal fade" id="delete-warning-{{card_id}}" tabindex="-1" aria-labelledby="delete-warning-{{card_id}}" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content deleteWarning">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Warning</h1>
+                                </div>
+                                <div class="modal-body">
+                                    Are you shure you want to delete your {{card_title}}-credentials?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Keep it</button>
+                                    <button type="button" class="btn btn-danger" id="final-delete-{{card_id}}">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Password-info -->
+            <div class="modal fade" id="password-info-{{card_id}}" tabindex="-1" aria-labelledby="password-info-{{card_id}}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content passwordInfo">
+                        <div class="modal-header" style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1;">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">{{card_title}}</h1>
+                            </div>
+                            <div class="passwordInfo-option-buttons" id="Image-editPassword-{{card_id}}">
+                                    <img src="{{img_path}}" id="Image-btnImage-editPassword-{{card_id}}" style="width: 60%; height: 60%; transition: opacity 0.3s ease;" alt="">
+                                    <input type="file" id="Image-Input-editPassword-{{card_id}}" accept=".png, .jpg, .jpeg" style="display: none;">
+                            </div>
+                            <div class="passwordInfo-option-buttons" id="copy-password-btn-{{card_id}}">
+                                <img src="../assets/home/copy.png" id="copy-password-btnImage-{{card_id}}" style="width: 60%; height: 60%; transition: opacity 0.3s ease;" alt="">
+                            </div>
+                            <div class="passwordInfo-option-buttons" id="view-password-btn-{{card_id}}">
+                                <img src="../assets/home/hide.png" id="view-password-btnImage-{{card_id}}" style="width: 60%; height: 60%; transition: opacity 0.3s ease;" alt="">
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="passwordInfo-credential-form" id="credential-form-{{card_id}}">
+                                <form>
+                                    <div class="mb-3 input-group-md">
+                                        <label for="emailInfo-{{card_id}}" class="form-label">Email/Username</label>
+                                        <input type="text" class="form-control" id="emailInfo-{{card_id}}" value="{{email}}" required>
+                                    </div>
+                                    <div class="mb-3 input-group-md">
+                                        <label for="passwordInfo-{{card_id}}" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="passwordInfo-{{card_id}}" value="{{password}}" required>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary" id="save-changes-{{card_id}}">Apply</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="usernameInUse" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content deleteWarning">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Error</h1>
+                        </div>
+                        <div class="modal-body">
+                            This username is already in use. Please choose another one.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>   
+    </script>
+
+    
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/home.js"></script>
+</body>
+</html>

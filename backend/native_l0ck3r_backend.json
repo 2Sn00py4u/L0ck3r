@@ -1,0 +1,9 @@
+{
+    "name": "com.native.locker",
+    "description": "Password-Manager-Backend",
+    "path": "backend_handler.py",
+    "type": "stdio",
+    "allowed_origins": [
+        "chrome-extension://<Extension-ID>/"
+    ]
+}

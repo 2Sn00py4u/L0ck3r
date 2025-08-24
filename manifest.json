@@ -1,0 +1,40 @@
+{
+    "manifest_version": 3,
+    "name": "L0CK3R",
+    "version": "1.0",
+    "description": "Secure Password-Manager",
+    "permissions": ["nativeMessaging", "activeTab", "storage", "scripting"],
+    "icons": {
+      "16": "assets/icons/icon16.png",
+      "48": "assets/icons/icon48.png",
+      "32": "assets/icons/icon32.png",
+      "128": "assets/icons/icon128.png"
+    },
+    "action": {
+      "default_popup": "html/login.html",
+      "default_icon": {
+        "16": "assets/icons/icon16.png",
+        "48": "assets/icons/icon48.png",
+        "32": "assets/icons/icon32.png",
+        "128": "assets/icons/icon128.png"
+      }
+    },
+    "background": {
+      "service_worker": "js/background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": [
+          "js/mustache.min.js",
+          "js/content.js"
+        ]
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": ["assets/icons/icon16.png", "assets/icons/icon48.png", "assets/icons/icon32.png", "assets/icons/icon128.png", "js/mustache.min.js", "js/content.js", "js/background.js"],
+        "matches": ["<all_urls>"]
+      }
+    ]
+}
