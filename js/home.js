@@ -614,8 +614,68 @@ document.addEventListener("DOMContentLoaded", function() {
             viewButton_img.src = "../assets/home/hide.png";
         };
     });
-});
+    document.getElementById("Password-addPassword").addEventListener("input", function(){
+        var password_validation_container = document.getElementById("password-validation-container");
+        if (password_validation_container.style.display = "none"){
+            password_validation_container.style.display = "flex";
+        }
+        function set_validation(element_id, value){
+            var element = document.getElementById(element_id);
+            if (value === true){
+                element.classList.remove("list-group-item-danger");
+                element.classList.add("list-group-item-success");
+            }
+            else{
+                element.classList.remove("list-group-item-success");
+                element.classList.add("list-group-item-danger");
+            }
+        }
+        function set_progressbar(value){
+            var validation_progress_bar_container = document.getElementById("validation-progress-bar-container");
+            var validation_progress_bar = document.getElementById("validation-progress-bar");
 
+            if (value <= 20){
+                validation_progress_bar.classList.remove("bg-warning");
+                validation_progress_bar.classList.remove("bg-success");
+                validation_progress_bar.classList.add("bg-danger");
+                validation_progress_bar.style.width = "5%";
+                validation_progress_bar_container.setAttribute("aria-valuenow", value.toString());
+            }
+            else if (value > 20 && value <= 60){
+                validation_progress_bar.classList.remove("bg-success");
+                validation_progress_bar.classList.remove("bg-danger");
+                validation_progress_bar.classList.add("bg-warning");
+                validation_progress_bar_container.setAttribute("aria-valuenow", value.toString());
+                validation_progress_bar.style.width = value.toString() + "%"; 
+            }
+            else if (value > 60){
+                validation_progress_bar.classList.remove("bg-danger");
+                validation_progress_bar.classList.remove("bg-warning");
+                validation_progress_bar.classList.add("bg-success");
+                validation_progress_bar_container.setAttribute("aria-valuenow", value.toString());
+                validation_progress_bar.style.width = value.toString() + "%";     
+            }
+        }
+        var password = document.getElementById("Password-addPassword").value;
+        let lowercase = /[a-z]/.test(password);
+        let uppercase = /[A-Z]/.test(password);
+        let numbers    = /[0-9]/.test(password);
+        let specialChars   = /[^A-Za-z0-9]/.test(password);
+        let length = password.length >= 10;
+        var validation_points = [lowercase, uppercase, numbers, specialChars, length];
+        let percentage = 0 
+        for (let i = 0; i < validation_points.length; i++){
+            if (validation_points[i] === true){
+                percentage = percentage + 20;
+                set_validation("validation_" + i.toString(), true);
+            }
+            else{
+                set_validation("validation_" + i.toString(), false);
+            }
+        }
+        set_progressbar(percentage); 
+    });
+});
 
 // side menu
 document.getElementById("L0CK3R_MyAccount").addEventListener("click", function() {

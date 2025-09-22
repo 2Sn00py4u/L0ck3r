@@ -308,6 +308,18 @@
                                         <label for="Password-addPassword" class="form-label">Password</label>
                                         <input type="password" class="form-control" id="Password-addPassword" value="" placeholder="More length, more strength..." required>
                                     </div>
+                                    <div id="validation-progress-bar-container" class="progress" role="progressbar" aria-label="Password-Strength" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" data-bs-theme="dark" style="height: 4px;">
+                                        <div class="progress-bar bg-danger" id="validation-progress-bar" style="width: 5%"></div>
+                                    </div>
+                                    <div id="password-validation-container" style="display: none;">
+                                        <ul class="list-group list-group-flush" style="margin-top: 2%; border-bottom: #f0f8ff 2px solid; border-radius: 10px 10px 0 0;" data-bs-theme="dark">                                            
+                                            <li id="validation_0" class="list-group-item list-group-item-danger">Lowercase letters: a-z</li>
+                                            <li id="validation_1" class="list-group-item list-group-item-danger">Uppercase letters: A-Z</li>
+                                            <li id="validation_2" class="list-group-item list-group-item-danger">Numbers: 0-9</li>
+                                            <li id="validation_3" class="list-group-item list-group-item-danger">Special characters: #-&</li>
+                                            <li id="validation_4" class="list-group-item list-group-item-danger">Length: > 10</li>
+                                        </ul>
+                                    </div>
                                 </form>
                             </div>
                         </div>
