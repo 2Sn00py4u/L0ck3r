@@ -4,6 +4,6 @@
     "path": "backend_handler.py",
     "type": "stdio",
     "allowed_origins": [
-        "chrome-extension://cdhibdkkoigpoelgckoehpajhloofpfl/"
+        "chrome-extension://ipegfgbbjmiijmoklnjoagfideechafj/"
     ]
 }

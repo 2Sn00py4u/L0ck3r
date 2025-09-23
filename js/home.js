@@ -634,12 +634,19 @@ document.addEventListener("DOMContentLoaded", function() {
             var validation_progress_bar_container = document.getElementById("validation-progress-bar-container");
             var validation_progress_bar = document.getElementById("validation-progress-bar");
 
-            if (value <= 20){
+            if (value < 20){
                 validation_progress_bar.classList.remove("bg-warning");
                 validation_progress_bar.classList.remove("bg-success");
                 validation_progress_bar.classList.add("bg-danger");
                 validation_progress_bar.style.width = "5%";
                 validation_progress_bar_container.setAttribute("aria-valuenow", value.toString());
+            }
+            if (value == 20){
+                validation_progress_bar.classList.remove("bg-warning");
+                validation_progress_bar.classList.remove("bg-success");
+                validation_progress_bar.classList.add("bg-danger");
+                validation_progress_bar_container.setAttribute("aria-valuenow", value.toString());
+                validation_progress_bar.style.width = value.toString() + "%"; 
             }
             else if (value > 20 && value <= 60){
                 validation_progress_bar.classList.remove("bg-success");
@@ -674,6 +681,22 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
         set_progressbar(percentage); 
+    });
+
+    var password_length_range = document.getElementById('password-length-range');
+    var password_length_range_output = document.getElementById('password-length-range-value');
+    password_length_range_output.textContent = password_length_range.value;
+
+    password_length_range.addEventListener('input', function() {
+        password_length_range_output.textContent = this.value;
+    });
+
+    var abstracting_level_range = document.getElementById('abstracting-level');
+    var abstracting_level_range_output = document.getElementById('abstracting-level-value');
+    abstracting_level_range_output.textContent = abstracting_level_range.value;
+
+    abstracting_level_range.addEventListener('input', function() {
+        abstracting_level_range_output.textContent = this.value;
     });
 });
 
