@@ -57,7 +57,7 @@ def main():
                         file.close()
                     
                     print(f"{GREEN}{BOLD}[+] Installation complete!{RESET}")
-                    input("\npress any key to exit...")
+                    input("\npress 'return' to exit...")
                         
                 except Exception as e:
                     print(f"{RED}{BOLD}[-] Error writing native-manifest: {e}{RESET}")    

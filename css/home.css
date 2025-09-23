@@ -280,6 +280,24 @@ input::placeholder {
     height: 95%;
 }
 
+.code-container {
+    background-color: #191a2c;
+    color: #abb2bf;
+    padding: 5%;
+    /*border-radius: 10px;*/
+    overflow-x: auto;
+}
+
+.code-container pre {
+    margin: 0;
+}
+
+.code-container code {
+    font-family: "Fira Code", "Cascadia Code", monospace; /* Monospaced font */
+    font-size: 1.7em;
+    line-height: 1.5;
+}
+
 .dropdown-menu{
     background-color: transparent; 
     border: 0;

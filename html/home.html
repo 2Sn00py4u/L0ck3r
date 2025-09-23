@@ -311,14 +311,39 @@
                                     <div id="validation-progress-bar-container" class="progress" role="progressbar" aria-label="Password-Strength" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" data-bs-theme="dark" style="height: 4px;">
                                         <div class="progress-bar bg-danger" id="validation-progress-bar" style="width: 5%"></div>
                                     </div>
-                                    <div id="password-validation-container" style="display: none;">
-                                        <ul class="list-group list-group-flush" style="margin-top: 2%; border-bottom: #f0f8ff 2px solid; border-radius: 10px 10px 0 0;" data-bs-theme="dark">                                            
-                                            <li id="validation_0" class="list-group-item list-group-item-danger">Lowercase letters: a-z</li>
-                                            <li id="validation_1" class="list-group-item list-group-item-danger">Uppercase letters: A-Z</li>
-                                            <li id="validation_2" class="list-group-item list-group-item-danger">Numbers: 0-9</li>
-                                            <li id="validation_3" class="list-group-item list-group-item-danger">Special characters: #-&</li>
-                                            <li id="validation_4" class="list-group-item list-group-item-danger">Length: > 10</li>
-                                        </ul>
+                                    <div id="password-validation-container" style="display: none; margin-top: 2%; justify-content: space-between; align-items: center; flex-direction: row; background-color:#020c1c; padding: 10px; border-radius: 15px;">
+                                        <div style="flex: 1; font-size:smaller;">
+                                            <ul class="list-group list-group-flush" data-bs-theme="dark">                                            
+                                                <li id="validation_0" class="list-group-item list-group-item-danger">Lowercase letters: a-z</li>
+                                                <li id="validation_1" class="list-group-item list-group-item-danger">Uppercase letters: A-Z</li>
+                                                <li id="validation_2" class="list-group-item list-group-item-danger">Numbers: 0-9</li>
+                                                <li id="validation_3" class="list-group-item list-group-item-danger">Special characters: #;&_</li>
+                                                <li id="validation_4" class="list-group-item list-group-item-danger">Length: > 10</li>
+                                            </ul>
+                                        </div>
+                                        <div style="width: 250px; margin-left: 3%; height: 100%;">
+                                            <div style="display: flex; justify-content: space-between;">
+                                                <div style="flex: 1;">                                                </div>
+                                                <div class="passwordInfo-option-buttons" title="Connect to Host" data-bs-toggle="collapse" data-bs-target="#connect-collapse" aria-expanded="false" aria-controls="collapseExample">
+                                                    <img src="../assets/home/sync.png" style="width: 60%; height: 60%; transition: opacity 0.3s ease;" alt="">
+                                                </div>
+                                                <div class="passwordInfo-option-buttons" title="Host Sync-Server" data-bs-toggle="collapse" data-bs-target="#host-collapse" aria-expanded="false" aria-controls="collapseExample">
+                                                    <img src="../assets/home/host.png" style="width: 60%; height: 60%; transition: opacity 0.3s ease;" alt="">
+                                                </div>
+                                                <div class="passwordInfo-option-buttons" title="Reload Hosts">
+                                                    <img src="../assets/home/reload.png" style="width: 60%; height: 60%; transition: opacity 0.3s ease;" alt="">
+                                                </div>
+                                            </div>
+                                            <div style="width: 100%; height: 90%;" data-bs-theme="dark">
+                                                <div class="code-container">
+                                                    <pre>
+                                                        <code>
+P4ssW0rd!1234
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
