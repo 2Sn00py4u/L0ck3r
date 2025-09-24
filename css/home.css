@@ -8,6 +8,11 @@ body{
     background-color: #1e2234;
     border-color: #f0f8ff;
 }
+pre{
+  white-space: pre-wrap; 
+  word-break: break-word;
+  overflow-x: hidden;
+}
 input::placeholder {
   font-style: italic;
   color: #353744;
@@ -307,7 +312,7 @@ input::placeholder {
 .code-block {
     border: 1px solid #d0d7de;
     border-radius: 6px;
-    overflow: hidden;
+    overflow-x: hidden;
     margin-bottom: 1rem;
 }
 
@@ -321,7 +326,7 @@ input::placeholder {
     padding: 1rem;
     background: #07081f;
     font-family: monospace;
-    overflow-x: auto;
+    overflow-x: hidden;
 }
 .code-inline {
     display: block;
@@ -332,6 +337,9 @@ input::placeholder {
     color: #f0f8ff;
     white-space: nowrap;
     overflow-x: auto;
+}
+.code-inline::-webkit-scrollbar {
+    display: none;
 }
 
 .dropdown-menu{

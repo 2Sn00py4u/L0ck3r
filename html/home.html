@@ -2,12 +2,10 @@
 <html lang="en">
 <head>
     <title>Home</title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/home.css">
     <script src="../js/mustache.min.js"></script>
-    <style>
-        
-    </style>
 </head>
 <body>
     <div class="page-container" id="homepage">
@@ -319,7 +317,7 @@
                                             <li id="validation_3" class="list-group-item list-group-item-danger">&#8226; Special characters: #;&_</li>
                                             <li id="validation_4" class="list-group-item list-group-item-danger">&#8226; Length: > 10</li>
                                             <li class="list-group-item">
-                                                <a class="link-info link-offset-2 link-underline-opacity-50 link-underline-opacity-100-hover" data-bs-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                                <a class="link-primary link-offset-2 link-underline-opacity-50 link-underline-opacity-100-hover" data-bs-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                                     Need strong Passwords?
                                                 </a>
                                             </li>
@@ -337,24 +335,24 @@
                                                         <ul class="dropdown-menu" style="margin-top: 2%; padding: 5%;">
                                                             <li>
                                                                 <label for="password-length-range" class="form-label">Charecters: <output for="password-length-range" id="password-length-range-value" aria-hidden="true">10</output></label>
-                                                                <input type="range" class="form-range" min="0" max="40" value="10" id="password-length-range">
+                                                                <input type="range" class="form-range" min="5" max="40" value="10" id="password-length-range">
                                                             </li>
                                                             <li>
                                                                 <label for="abstracting-level" class="form-label">Level: <output for="abstracting-level" id="abstracting-level-value" aria-hidden="true">4</output></label>
-                                                                <input type="range" class="form-range" min="0" max="4" value="4" id="abstracting-level">
+                                                                <input type="range" class="form-range" min="1" max="4" value="2" id="abstracting-level">
                                                             </li>
                                                         </ul>
-                                                        <a class="codebox-link link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-80-hover">
-                                                            load
+                                                        <a class="codebox-link link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-80-hover" id="regenerate-password">
+                                                            reload
                                                         </a>
-                                                        <a class="codebox-link link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-80-hover">
+                                                        <a class="codebox-link link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-80-hover" id="copy-generated-password">
                                                             copy
                                                         </a>
                                                     </div>
                                                 </div>
                                                 <div class="code-body">
                                                     <pre>
-                                                        <code class="code-inline">
+                                                        <code class="code-inline" id="generated-password">
 P@ssw0rd-G3n3rat0r
                                                         </code>
                                                     </pre>
@@ -362,30 +360,6 @@ P@ssw0rd-G3n3rat0r
                                             </div> 
                                         </div>
                                     </div>
-                                    <!--    <div style="width: 250px; margin-left: 3%; height: 100%;">
-                                            <div style="display: flex; justify-content: space-between;">
-                                                <div style="flex: 1;">                                                </div>
-                                                <div class="passwordInfo-option-buttons" title="Connect to Host" data-bs-toggle="collapse" data-bs-target="#connect-collapse" aria-expanded="false" aria-controls="collapseExample">
-                                                    <img src="../assets/home/sync.png" style="width: 60%; height: 60%; transition: opacity 0.3s ease;" alt="">
-                                                </div>
-                                                <div class="passwordInfo-option-buttons" title="Host Sync-Server" data-bs-toggle="collapse" data-bs-target="#host-collapse" aria-expanded="false" aria-controls="collapseExample">
-                                                    <img src="../assets/home/host.png" style="width: 60%; height: 60%; transition: opacity 0.3s ease;" alt="">
-                                                </div>
-                                                <div class="passwordInfo-option-buttons" title="Reload Hosts">
-                                                    <img src="../assets/home/reload.png" style="width: 60%; height: 60%; transition: opacity 0.3s ease;" alt="">
-                                                </div>
-                                            </div>
-                                            <div style="width: 100%; height: 90%;" data-bs-theme="dark">
-                                                <div class="code-container">
-                                                    <pre>
-                                                        <code>
-P4ssW0rd!1234
-                                                        </code>
-                                                    </pre>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>-->
                                 </form>
                             </div>
                         </div>

@@ -683,20 +683,79 @@ document.addEventListener("DOMContentLoaded", function() {
         set_progressbar(percentage); 
     });
 
+    function generatePassword(length, lvl){
+        function pick_by_percentage(low_letters_p, cap_letters_p, numbers_p, characters_p){
+            if (low_letters_p + cap_letters_p + numbers_p + characters_p !== 1){
+                alert("return");
+                return 1;
+            }
+            let low_letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "ä", "ö", "ü"];
+            let cap_letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "Ä", "Ö", "Ü"];
+            let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            let characters = ["!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/",":", ";", "<", "=", ">", "?", "@","[", "\\", "]", "^", "_", "`","{", "|", "}", "~"];
+            let char_distribution = [Array(low_letters_p*100).fill(low_letters).flat(), Array(cap_letters_p*100).fill(cap_letters).flat(), Array(numbers_p*100).fill(numbers).flat(), Array(characters_p*100).fill(characters).flat()].flat();
+            return char_distribution[Math.floor(Math.random() * char_distribution.length)];
+        };  
+        let password = "";
+        if (lvl == 1){
+            for (let i = 0; i < length; i++){
+                password = password + pick_by_percentage(0.8, 0.2, 0.0, 0.0);
+            };
+        }
+        else if (lvl == 2){
+            for (let i = 0; i < length; i++){
+                password = password + pick_by_percentage(0.4, 0.3, 0.3, 0.0);
+            };
+        }
+        else if (lvl == 3){
+            for (let i = 0; i < length; i++){
+                password = password + pick_by_percentage(0.25, 0.25, 0.25, 0.25);
+            };
+        }
+        else if (lvl == 4){
+            for (let i = 0; i < length; i++){
+                password = password + pick_by_percentage(0.2, 0.2, 0.3, 0.3);
+            }
+        };
+        return password;
+    };
+
     var password_length_range = document.getElementById('password-length-range');
     var password_length_range_output = document.getElementById('password-length-range-value');
+    var generated_password = document.getElementById('generated-password');
     password_length_range_output.textContent = password_length_range.value;
-
-    password_length_range.addEventListener('input', function() {
-        password_length_range_output.textContent = this.value;
-    });
 
     var abstracting_level_range = document.getElementById('abstracting-level');
     var abstracting_level_range_output = document.getElementById('abstracting-level-value');
     abstracting_level_range_output.textContent = abstracting_level_range.value;
 
+    generated_password.innerHTML = generatePassword(password_length_range.value, abstracting_level_range.value);
+    password_length_range.addEventListener('input', function() {
+        password_length_range_output.textContent = this.value;
+        generated_password.innerHTML = generatePassword(password_length_range.value, abstracting_level_range.value);
+
+    });
+
     abstracting_level_range.addEventListener('input', function() {
         abstracting_level_range_output.textContent = this.value;
+        generated_password.innerHTML = generatePassword(password_length_range.value, abstracting_level_range.value);
+    });
+
+    var regenerate_password = document.getElementById("regenerate-password");
+    regenerate_password.addEventListener("click", function(){
+        generated_password.innerHTML = generatePassword(password_length_range.value, abstracting_level_range.value);
+    });
+
+    var copy_generated_password = document.getElementById("copy-generated-password")
+    copy_generated_password.addEventListener("click", function(){
+        navigator.clipboard.writeText(generated_password.innerHTML).then(() => {
+            copy_generated_password.innerHTML = "&#10003; copied"
+            setTimeout(() => {
+                copy_generated_password.innerHTML = "copy"
+            }, 400);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
     });
 });
 
