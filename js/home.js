@@ -523,13 +523,20 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("add-button").addEventListener("click", function() {
         if (port === null){
             establishPort();
-        } 
+        }
         let addPasswordCardModal = new bootstrap.Modal(document.getElementById("add-password-modal"), {
             backdrop: 'static',
             keyboard: false
         });
         addPasswordCardModal.show();
-        let addPasswordCardButton = document.getElementById("add-Password");
+
+        document.getElementById("cancel-add-Password").addEventListener("click", function(){
+            addPasswordCardModal.hide();
+            addPasswordCardModal.dispose();
+            window.location.href = "home.html";
+        });
+
+        var addPasswordCardButton = document.getElementById("add-Password");
         addPasswordCardButton.addEventListener("click", function() {
             if (port === null){
                 establishPort();
