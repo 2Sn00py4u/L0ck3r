@@ -350,6 +350,169 @@ if (port === null){
     establishPort();
 } 
 
+// Password-Generator
+function set_progressbar(value, validation_progress_bar_container_id, validation_progress_bar_id){
+    var validation_progress_bar_container = document.getElementById(validation_progress_bar_container_id);
+    var validation_progress_bar = document.getElementById(validation_progress_bar_id);
+
+    if (value < 20){
+        validation_progress_bar.classList.remove("bg-warning");
+        validation_progress_bar.classList.remove("bg-success");
+        validation_progress_bar.classList.add("bg-danger");
+        validation_progress_bar.style.width = "5%";
+        validation_progress_bar_container.setAttribute("aria-valuenow", value.toString());
+    }
+    if (value == 20){
+        validation_progress_bar.classList.remove("bg-warning");
+        validation_progress_bar.classList.remove("bg-success");
+        validation_progress_bar.classList.add("bg-danger");
+        validation_progress_bar_container.setAttribute("aria-valuenow", value.toString());
+        validation_progress_bar.style.width = value.toString() + "%"; 
+    }
+    else if (value > 20 && value <= 60){
+        validation_progress_bar.classList.remove("bg-success");
+        validation_progress_bar.classList.remove("bg-danger");
+        validation_progress_bar.classList.add("bg-warning");
+        validation_progress_bar_container.setAttribute("aria-valuenow", value.toString());
+        validation_progress_bar.style.width = value.toString() + "%"; 
+    }
+    else if (value > 60){
+        validation_progress_bar.classList.remove("bg-danger");
+        validation_progress_bar.classList.remove("bg-warning");
+        validation_progress_bar.classList.add("bg-success");
+        validation_progress_bar_container.setAttribute("aria-valuenow", value.toString());
+        validation_progress_bar.style.width = value.toString() + "%";     
+    }
+}
+function setPercentageOnLoad(passwordInput_id, validation_progress_bar_container_id, validation_progress_bar_id){
+    var password = document.getElementById(passwordInput_id).value;
+    let lowercase = /[a-z]/.test(password);
+    let uppercase = /[A-Z]/.test(password);
+    let numbers    = /[0-9]/.test(password);
+    let specialChars   = /[^A-Za-z0-9]/.test(password);
+    let length = password.length >= 10;
+    var validation_points = [lowercase, uppercase, numbers, specialChars, length];
+    let percentage = 0 
+    for (let a = 0; a < validation_points.length; a++){
+        if (validation_points[a] === true){
+            percentage = percentage + 20;
+        }
+    }
+    set_progressbar(percentage, validation_progress_bar_container_id, validation_progress_bar_id);
+};
+
+// eventListener => input
+function togglePasswordManager(password_input_id, password_validation_container_id, validation_prefix, password_length_range_id, password_length_range_value_id, generated_password_id,
+                                abstracting_level_id, abstracting_level_value_id, regenerate_password_id, copy_generated_password_id, validation_progress_bar_container_id, validation_progress_bar_id){
+    var password_validation_container = document.getElementById(password_validation_container_id);
+    if (password_validation_container.style.display = "none"){
+        password_validation_container.style.display = "flex";
+    }
+    function set_validation(element_id, value){
+        var element = document.getElementById(element_id);
+        if (value === true){
+            element.classList.remove("list-group-item-danger");
+            element.classList.add("list-group-item-success");
+        }
+        else{
+            element.classList.remove("list-group-item-success");
+            element.classList.add("list-group-item-danger");
+        }
+    }
+
+    var password = document.getElementById(password_input_id).value;
+    let lowercase = /[a-z]/.test(password);
+    let uppercase = /[A-Z]/.test(password);
+    let numbers    = /[0-9]/.test(password);
+    let specialChars   = /[^A-Za-z0-9]/.test(password);
+    let length = password.length >= 10;
+    var validation_points = [lowercase, uppercase, numbers, specialChars, length];
+    let percentage = 0 
+    for (let a = 0; a < validation_points.length; a++){
+        if (validation_points[a] === true){
+            percentage = percentage + 20;
+            set_validation(validation_prefix + a.toString(), true);
+        }
+        else{
+            set_validation(validation_prefix + a.toString(), false);
+        }
+    }
+    set_progressbar(percentage, validation_progress_bar_container_id, validation_progress_bar_id);
+    
+    function generatePassword(length, lvl){
+        function pick_by_percentage(low_letters_p, cap_letters_p, numbers_p, characters_p){
+            if (low_letters_p + cap_letters_p + numbers_p + characters_p !== 1){
+                return 1;
+            }
+            let low_letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "ä", "ö", "ü"];
+            let cap_letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "Ä", "Ö", "Ü"];
+            let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            let characters = ["!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/",":", ";", "<", "=", ">", "?", "@","[", "\\", "]", "^", "_", "`","{", "|", "}", "~"];
+            let char_distribution = [Array(low_letters_p*100).fill(low_letters).flat(), Array(cap_letters_p*100).fill(cap_letters).flat(), Array(numbers_p*100).fill(numbers).flat(), Array(characters_p*100).fill(characters).flat()].flat();
+            return char_distribution[Math.floor(Math.random() * char_distribution.length)];
+        };  
+        let password = "";
+        if (lvl == 1){
+            for (let x = 0; x < length; x++){
+                password = password + pick_by_percentage(0.8, 0.2, 0.0, 0.0);
+            };
+        }
+        else if (lvl == 2){
+            for (let x = 0; x < length; x++){
+                password = password + pick_by_percentage(0.4, 0.3, 0.3, 0.0);
+            };
+        }
+        else if (lvl == 3){
+            for (let x = 0; x < length; x++){
+                password = password + pick_by_percentage(0.25, 0.25, 0.25, 0.25);
+            };
+        }
+        else if (lvl == 4){
+            for (let x = 0; x < length; x++){
+                password = password + pick_by_percentage(0.2, 0.2, 0.3, 0.3);
+            }
+        };
+        return password;
+    };
+
+    var password_length_range = document.getElementById(password_length_range_id);
+    var password_length_range_output = document.getElementById(password_length_range_value_id);
+    var generated_password = document.getElementById(generated_password_id);
+    password_length_range_output.textContent = password_length_range.value;
+
+    var abstracting_level_range = document.getElementById(abstracting_level_id);
+    var abstracting_level_range_output = document.getElementById(abstracting_level_value_id);
+    abstracting_level_range_output.textContent = abstracting_level_range.value;
+
+    generated_password.innerHTML = generatePassword(password_length_range.value, abstracting_level_range.value);
+    password_length_range.addEventListener('input', function() {
+        password_length_range_output.textContent = this.value;
+        generated_password.innerHTML = generatePassword(password_length_range.value, abstracting_level_range.value);
+
+    });
+
+    abstracting_level_range.addEventListener('input', function() {
+        abstracting_level_range_output.textContent = this.value;
+        generated_password.innerHTML = generatePassword(password_length_range.value, abstracting_level_range.value);
+    });
+
+    var regenerate_password = document.getElementById(regenerate_password_id);
+    regenerate_password.addEventListener("click", function(){
+        generated_password.innerHTML = generatePassword(password_length_range.value, abstracting_level_range.value);
+    });
+
+    var copy_generated_password = document.getElementById(copy_generated_password_id);
+    copy_generated_password.addEventListener("click", function(){
+        navigator.clipboard.writeText(generated_password.innerHTML).then(() => {
+            copy_generated_password.innerHTML = "&#10003; copied"
+            setTimeout(() => {
+                copy_generated_password.innerHTML = "copy"
+            }, 400);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+    });
+};
 
 // Loading the home page content using Mustache.js
 document.addEventListener("DOMContentLoaded", function() {
@@ -470,167 +633,14 @@ document.addEventListener("DOMContentLoaded", function() {
             port.postMessage(edit_passwdCard_message);
         });
 
-        function set_progressbar(value){
-            var validation_progress_bar_container = document.getElementById(("validation-progress-bar-container-" + i.toString()));
-            var validation_progress_bar = document.getElementById(("validation-progress-bar-" + i.toString()));
+        document.getElementById(("edit-cancel-" + i.toString())).addEventListener("click", function(){
+            window.location.href = "home.html"
+        });
 
-            if (value < 20){
-                validation_progress_bar.classList.remove("bg-warning");
-                validation_progress_bar.classList.remove("bg-success");
-                validation_progress_bar.classList.add("bg-danger");
-                validation_progress_bar.style.width = "5%";
-                validation_progress_bar_container.setAttribute("aria-valuenow", value.toString());
-            }
-            if (value == 20){
-                validation_progress_bar.classList.remove("bg-warning");
-                validation_progress_bar.classList.remove("bg-success");
-                validation_progress_bar.classList.add("bg-danger");
-                validation_progress_bar_container.setAttribute("aria-valuenow", value.toString());
-                validation_progress_bar.style.width = value.toString() + "%"; 
-            }
-            else if (value > 20 && value <= 60){
-                validation_progress_bar.classList.remove("bg-success");
-                validation_progress_bar.classList.remove("bg-danger");
-                validation_progress_bar.classList.add("bg-warning");
-                validation_progress_bar_container.setAttribute("aria-valuenow", value.toString());
-                validation_progress_bar.style.width = value.toString() + "%"; 
-            }
-            else if (value > 60){
-                validation_progress_bar.classList.remove("bg-danger");
-                validation_progress_bar.classList.remove("bg-warning");
-                validation_progress_bar.classList.add("bg-success");
-                validation_progress_bar_container.setAttribute("aria-valuenow", value.toString());
-                validation_progress_bar.style.width = value.toString() + "%";     
-            }
-        }
-        function setPercentageOnLoad(i){
-            var password = document.getElementById(("passwordInfo-" + i.toString())).value;
-            let lowercase = /[a-z]/.test(password);
-            let uppercase = /[A-Z]/.test(password);
-            let numbers    = /[0-9]/.test(password);
-            let specialChars   = /[^A-Za-z0-9]/.test(password);
-            let length = password.length >= 10;
-            var validation_points = [lowercase, uppercase, numbers, specialChars, length];
-            let percentage = 0 
-            for (let a = 0; a < validation_points.length; a++){
-                if (validation_points[a] === true){
-                    percentage = percentage + 20;
-                }
-            }
-            set_progressbar(percentage);
-        };
-        setPercentageOnLoad(i);
-
+        setPercentageOnLoad(("passwordInfo-" + i.toString()), ("validation-progress-bar-container-" + i.toString()), ("validation-progress-bar-" + i.toString()));
         var editPasswordInput = document.getElementById(("passwordInfo-" + i.toString()));
         editPasswordInput.addEventListener("input", function(){
-            var password_validation_container = document.getElementById(("edit-password-validation-container-" + i.toString()));
-            if (password_validation_container.style.display = "none"){
-                password_validation_container.style.display = "flex";
-            }
-            function set_validation(element_id, value){
-                var element = document.getElementById(element_id);
-                if (value === true){
-                    element.classList.remove("list-group-item-danger");
-                    element.classList.add("list-group-item-success");
-                }
-                else{
-                    element.classList.remove("list-group-item-success");
-                    element.classList.add("list-group-item-danger");
-                }
-            }
-
-            var password = document.getElementById(("passwordInfo-" + i.toString())).value;
-            let lowercase = /[a-z]/.test(password);
-            let uppercase = /[A-Z]/.test(password);
-            let numbers    = /[0-9]/.test(password);
-            let specialChars   = /[^A-Za-z0-9]/.test(password);
-            let length = password.length >= 10;
-            var validation_points = [lowercase, uppercase, numbers, specialChars, length];
-            let percentage = 0 
-            for (let a = 0; a < validation_points.length; a++){
-                if (validation_points[a] === true){
-                    percentage = percentage + 20;
-                    set_validation(i.toString() + "-edit-validation_" + a.toString(), true);
-                }
-                else{
-                    set_validation(i.toString() + "-edit-validation_" + a.toString(), false);
-                }
-            }
-            set_progressbar(percentage);
-            
-            function generatePassword(length, lvl){
-                function pick_by_percentage(low_letters_p, cap_letters_p, numbers_p, characters_p){
-                    if (low_letters_p + cap_letters_p + numbers_p + characters_p !== 1){
-                        return 1;
-                    }
-                    let low_letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "ä", "ö", "ü"];
-                    let cap_letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "Ä", "Ö", "Ü"];
-                    let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-                    let characters = ["!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/",":", ";", "<", "=", ">", "?", "@","[", "\\", "]", "^", "_", "`","{", "|", "}", "~"];
-                    let char_distribution = [Array(low_letters_p*100).fill(low_letters).flat(), Array(cap_letters_p*100).fill(cap_letters).flat(), Array(numbers_p*100).fill(numbers).flat(), Array(characters_p*100).fill(characters).flat()].flat();
-                    return char_distribution[Math.floor(Math.random() * char_distribution.length)];
-                };  
-                let password = "";
-                if (lvl == 1){
-                    for (let x = 0; x < length; x++){
-                        password = password + pick_by_percentage(0.8, 0.2, 0.0, 0.0);
-                    };
-                }
-                else if (lvl == 2){
-                    for (let x = 0; x < length; x++){
-                        password = password + pick_by_percentage(0.4, 0.3, 0.3, 0.0);
-                    };
-                }
-                else if (lvl == 3){
-                    for (let x = 0; x < length; x++){
-                        password = password + pick_by_percentage(0.25, 0.25, 0.25, 0.25);
-                    };
-                }
-                else if (lvl == 4){
-                    for (let x = 0; x < length; x++){
-                        password = password + pick_by_percentage(0.2, 0.2, 0.3, 0.3);
-                    }
-                };
-                return password;
-            };
-
-            var password_length_range = document.getElementById(("edit-password-length-range-" + i.toString()));
-            var password_length_range_output = document.getElementById(("edit-password-length-range-value-" + i.toString()));
-            var generated_password = document.getElementById(("edit-generated-password-" + i.toString()));
-            password_length_range_output.textContent = password_length_range.value;
-
-            var abstracting_level_range = document.getElementById(("edit-abstracting-level-" + i.toString()));
-            var abstracting_level_range_output = document.getElementById(("edit-abstracting-level-value-" + i.toString()));
-            abstracting_level_range_output.textContent = abstracting_level_range.value;
-
-            generated_password.innerHTML = generatePassword(password_length_range.value, abstracting_level_range.value);
-            password_length_range.addEventListener('input', function() {
-                password_length_range_output.textContent = this.value;
-                generated_password.innerHTML = generatePassword(password_length_range.value, abstracting_level_range.value);
-
-            });
-
-            abstracting_level_range.addEventListener('input', function() {
-                abstracting_level_range_output.textContent = this.value;
-                generated_password.innerHTML = generatePassword(password_length_range.value, abstracting_level_range.value);
-            });
-
-            var regenerate_password = document.getElementById(("edit-regenerate-password-" + i.toString()));
-            regenerate_password.addEventListener("click", function(){
-                generated_password.innerHTML = generatePassword(password_length_range.value, abstracting_level_range.value);
-            });
-
-            var copy_generated_password = document.getElementById(("edit-copy-generated-password-" + i.toString()))
-            copy_generated_password.addEventListener("click", function(){
-                navigator.clipboard.writeText(generated_password.innerHTML).then(() => {
-                    copy_generated_password.innerHTML = "&#10003; copied"
-                    setTimeout(() => {
-                        copy_generated_password.innerHTML = "copy"
-                    }, 400);
-                    }).catch(err => {
-                        console.error('Failed to copy text: ', err);
-                    });
-            });
+            togglePasswordManager(("passwordInfo-" + i.toString()), ("edit-password-validation-container-" + i.toString()), (i.toString() + "-edit-validation_"), ("edit-password-length-range-" + i.toString()), ("edit-password-length-range-value-" + i.toString()), ("edit-generated-password-" + i.toString()), ("edit-abstracting-level-" + i.toString()), ("edit-abstracting-level-value-" + i.toString()), ("edit-regenerate-password-" + i.toString()), ("edit-copy-generated-password-" + i.toString()), ("validation-progress-bar-container-" + i.toString()), ("validation-progress-bar-" + i.toString()))
         });
     
     };
@@ -786,147 +796,7 @@ document.addEventListener("DOMContentLoaded", function() {
         };
     });
     document.getElementById("Password-addPassword").addEventListener("input", function(){
-        var password_validation_container = document.getElementById("password-validation-container");
-        if (password_validation_container.style.display = "none"){
-            password_validation_container.style.display = "flex";
-        }
-        function set_validation(element_id, value){
-            var element = document.getElementById(element_id);
-            if (value === true){
-                element.classList.remove("list-group-item-danger");
-                element.classList.add("list-group-item-success");
-            }
-            else{
-                element.classList.remove("list-group-item-success");
-                element.classList.add("list-group-item-danger");
-            }
-        }
-        function set_progressbar(value){
-            var validation_progress_bar_container = document.getElementById("validation-progress-bar-container");
-            var validation_progress_bar = document.getElementById("validation-progress-bar");
-
-            if (value < 20){
-                validation_progress_bar.classList.remove("bg-warning");
-                validation_progress_bar.classList.remove("bg-success");
-                validation_progress_bar.classList.add("bg-danger");
-                validation_progress_bar.style.width = "5%";
-                validation_progress_bar_container.setAttribute("aria-valuenow", value.toString());
-            }
-            if (value == 20){
-                validation_progress_bar.classList.remove("bg-warning");
-                validation_progress_bar.classList.remove("bg-success");
-                validation_progress_bar.classList.add("bg-danger");
-                validation_progress_bar_container.setAttribute("aria-valuenow", value.toString());
-                validation_progress_bar.style.width = value.toString() + "%"; 
-            }
-            else if (value > 20 && value <= 60){
-                validation_progress_bar.classList.remove("bg-success");
-                validation_progress_bar.classList.remove("bg-danger");
-                validation_progress_bar.classList.add("bg-warning");
-                validation_progress_bar_container.setAttribute("aria-valuenow", value.toString());
-                validation_progress_bar.style.width = value.toString() + "%"; 
-            }
-            else if (value > 60){
-                validation_progress_bar.classList.remove("bg-danger");
-                validation_progress_bar.classList.remove("bg-warning");
-                validation_progress_bar.classList.add("bg-success");
-                validation_progress_bar_container.setAttribute("aria-valuenow", value.toString());
-                validation_progress_bar.style.width = value.toString() + "%";     
-            }
-        }
-        var password = document.getElementById("Password-addPassword").value;
-        let lowercase = /[a-z]/.test(password);
-        let uppercase = /[A-Z]/.test(password);
-        let numbers    = /[0-9]/.test(password);
-        let specialChars   = /[^A-Za-z0-9]/.test(password);
-        let length = password.length >= 10;
-        var validation_points = [lowercase, uppercase, numbers, specialChars, length];
-        let percentage = 0 
-        for (let i = 0; i < validation_points.length; i++){
-            if (validation_points[i] === true){
-                percentage = percentage + 20;
-                set_validation("validation_" + i.toString(), true);
-            }
-            else{
-                set_validation("validation_" + i.toString(), false);
-            }
-        }
-        set_progressbar(percentage); 
-    });
-
-    function generatePassword(length, lvl){
-        function pick_by_percentage(low_letters_p, cap_letters_p, numbers_p, characters_p){
-            if (low_letters_p + cap_letters_p + numbers_p + characters_p !== 1){
-                alert("return");
-                return 1;
-            }
-            let low_letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "ä", "ö", "ü"];
-            let cap_letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "Ä", "Ö", "Ü"];
-            let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-            let characters = ["!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/",":", ";", "<", "=", ">", "?", "@","[", "\\", "]", "^", "_", "`","{", "|", "}", "~"];
-            let char_distribution = [Array(low_letters_p*100).fill(low_letters).flat(), Array(cap_letters_p*100).fill(cap_letters).flat(), Array(numbers_p*100).fill(numbers).flat(), Array(characters_p*100).fill(characters).flat()].flat();
-            return char_distribution[Math.floor(Math.random() * char_distribution.length)];
-        };  
-        let password = "";
-        if (lvl == 1){
-            for (let i = 0; i < length; i++){
-                password = password + pick_by_percentage(0.8, 0.2, 0.0, 0.0);
-            };
-        }
-        else if (lvl == 2){
-            for (let i = 0; i < length; i++){
-                password = password + pick_by_percentage(0.4, 0.3, 0.3, 0.0);
-            };
-        }
-        else if (lvl == 3){
-            for (let i = 0; i < length; i++){
-                password = password + pick_by_percentage(0.25, 0.25, 0.25, 0.25);
-            };
-        }
-        else if (lvl == 4){
-            for (let i = 0; i < length; i++){
-                password = password + pick_by_percentage(0.2, 0.2, 0.3, 0.3);
-            }
-        };
-        return password;
-    };
-
-    var password_length_range = document.getElementById('password-length-range');
-    var password_length_range_output = document.getElementById('password-length-range-value');
-    var generated_password = document.getElementById('generated-password');
-    password_length_range_output.textContent = password_length_range.value;
-
-    var abstracting_level_range = document.getElementById('abstracting-level');
-    var abstracting_level_range_output = document.getElementById('abstracting-level-value');
-    abstracting_level_range_output.textContent = abstracting_level_range.value;
-
-    generated_password.innerHTML = generatePassword(password_length_range.value, abstracting_level_range.value);
-    password_length_range.addEventListener('input', function() {
-        password_length_range_output.textContent = this.value;
-        generated_password.innerHTML = generatePassword(password_length_range.value, abstracting_level_range.value);
-
-    });
-
-    abstracting_level_range.addEventListener('input', function() {
-        abstracting_level_range_output.textContent = this.value;
-        generated_password.innerHTML = generatePassword(password_length_range.value, abstracting_level_range.value);
-    });
-
-    var regenerate_password = document.getElementById("regenerate-password");
-    regenerate_password.addEventListener("click", function(){
-        generated_password.innerHTML = generatePassword(password_length_range.value, abstracting_level_range.value);
-    });
-
-    var copy_generated_password = document.getElementById("copy-generated-password")
-    copy_generated_password.addEventListener("click", function(){
-        navigator.clipboard.writeText(generated_password.innerHTML).then(() => {
-            copy_generated_password.innerHTML = "&#10003; copied"
-            setTimeout(() => {
-                copy_generated_password.innerHTML = "copy"
-            }, 400);
-            }).catch(err => {
-                console.error('Failed to copy text: ', err);
-            });
+       togglePasswordManager("Password-addPassword", "password-validation-container", "validation_", "password-length-range", "password-length-range-value", "generated-password", "abstracting-level", "abstracting-level-value", "regenerate-password", "copy-generated-password", "validation-progress-bar-container", "validation-progress-bar");
     });
 });
 
