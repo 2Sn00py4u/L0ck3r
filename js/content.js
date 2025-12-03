@@ -1,13 +1,13 @@
 
 chrome.storage.local.get("credentials", (data) => {
     const credentials = data.credentials || {};
-    alert(credentials);
+    //alert(credentials);
     chrome.storage.local.get("autofill", (autofill_settings) => {
         const autofill = autofill_settings.autofill || false;
-        alert(autofill);  
+        //alert(autofill);  
         if (autofill === true) {
             if (window.location.href.toLowerCase().includes("login") || window.location.href.toLowerCase().includes("signin") || window.location.href.toLowerCase.includes("auth")) {
-                alert(window.location.href.toLowerCase());
+                //alert(window.location.href.toLowerCase());
                 let fullhostname = window.location.hostname.toLowerCase();
                 let hostname_list = fullhostname.split('.');
                 let hostname = hostname_list[hostname_list.length - 2];
@@ -18,6 +18,7 @@ chrome.storage.local.get("credentials", (data) => {
                         matching.push(card);
                     }
                 }
+                matching.push({"hostname":hostname,"password":"G3n3r4ted","username":"P@ssw0rd-G3ner4tor"})
 
                 function fillFields(selected) {
                     const usernameField = document.querySelector('input[name="login"], input[name="username"], input[name="email"], input[id="username"], input[id="email"], input[type="text"]');
@@ -36,7 +37,7 @@ chrome.storage.local.get("credentials", (data) => {
                 }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
                 const usernameField = document.querySelector('input[name="login"], input[name="username"], input[name="email"], input[id="username"], input[id="email"], input[type="text"]');
                 if (usernameField) {
-                    alert(usernameField.id)
+                    //alert(usernameField.id)
                     oldIcon = document.getElementById("locker-autofill-icon");
                     if (oldIcon) {
                         oldIcon.remove();
@@ -115,35 +116,31 @@ chrome.storage.local.get("credentials", (data) => {
                         left: (usernameField.offsetLeft),
                         dropdownleft: (usernameField.offsetLeft - parseInt(inputHeight)),
                     };
-                    if (matching.length > 0){
-                        for (let i = 0; i < matching.length; i++) {
-                            templateValues["card_" + (i + 1)] = matching[i].username;
-                            templateValues["credentials_" + (i + 1)] = JSON.stringify(matching[i]);
-                            iconTemplate = iconTemplate + `<li><a class="dropdown-item" id="locker-cred-${i + 1}">{{card_${i + 1}}}</a></li>`;
-                            if (i === matching.length - 1) {
-                                iconTemplate = iconTemplate + `</div></div>`;
-                            }
+                    
+                    for (let i = 0; i < matching.length; i++) {
+                        templateValues["card_" + (i + 1)] = matching[i].username;
+                        //alert(JSON.stringify(matching[i]))
+                        templateValues["credentials_" + (i + 1)] = JSON.stringify(matching[i]);
+                        iconTemplate = iconTemplate + `<li><a class="dropdown-item" id="locker-cred-${i + 1}">{{card_${i + 1}}}</a></li>`;
+                        if (i === matching.length - 1) {
+                            iconTemplate = iconTemplate + `</div></div>`;
                         }
-                    }
-                    else{
-                        templateValues["card_1"] = "P@ssw0rd - Generator"
-                        iconTemplate = iconTemplate + `<li><a class="dropdown-item" id="locker-cred-1">{{card_1}}</a></li>`;
-                        iconTemplate = iconTemplate + `</div></div>`;
-
                     }
                     const renderedIcon = Mustache.render(iconTemplate, templateValues);
                     usernameField.parentNode.insertAdjacentHTML("beforeend", renderedIcon);
-                    alert("icon rendered!");
+                    //alert("icon rendered!");
                     const iconDiv = document.getElementById("locker-autofill-icon");
                     const dropdown = document.getElementById("dropdown");
 
                     iconDiv.addEventListener("click", function(e) {
+                        chrome.runtime.sendMessage({ action: "open_extension_window" });
                         e.preventDefault();
                         if (dropdown.style.display === "block") {
                             dropdown.style.display = "none";
                         } else {
                             dropdown.style.display = "block";
                         }
+                        
                     });
 
                     document.addEventListener("click", function(event) {

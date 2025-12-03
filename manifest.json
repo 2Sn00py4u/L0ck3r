@@ -3,7 +3,7 @@
     "name": "L0CK3R",
     "version": "1.0",
     "description": "Secure Password-Manager",
-    "permissions": ["nativeMessaging", "activeTab", "storage", "scripting"],
+    "permissions": ["nativeMessaging", "activeTab", "storage", "scripting", "windows"],
     "icons": {
       "16": "assets/icons/icon16.png",
       "48": "assets/icons/icon48.png",
