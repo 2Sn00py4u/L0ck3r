@@ -1,7 +1,7 @@
 
 chrome.storage.local.get("credentials", (data) => {
     const credentials = data.credentials || {};
-    //alert(credentials);
+    //alert(JSON.stringify(credentials));
     chrome.storage.local.get("autofill", (autofill_settings) => {
         const autofill = autofill_settings.autofill || false;
         //alert(autofill);  
@@ -128,19 +128,18 @@ chrome.storage.local.get("credentials", (data) => {
                     }
                     const renderedIcon = Mustache.render(iconTemplate, templateValues);
                     usernameField.parentNode.insertAdjacentHTML("beforeend", renderedIcon);
-                    //alert("icon rendered!");
+
                     const iconDiv = document.getElementById("locker-autofill-icon");
                     const dropdown = document.getElementById("dropdown");
 
                     iconDiv.addEventListener("click", function(e) {
-                        chrome.runtime.sendMessage({ action: "open_extension_window" });
+                        chrome.runtime.sendMessage({ type: "open_password_suggestion", suggested: matching, userdata: credentials });
                         e.preventDefault();
                         if (dropdown.style.display === "block") {
                             dropdown.style.display = "none";
                         } else {
                             dropdown.style.display = "block";
                         }
-                        
                     });
 
                     document.addEventListener("click", function(event) {

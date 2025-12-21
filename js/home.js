@@ -7,7 +7,8 @@ function updateCredentialsFromUserdata(userdata) {
             credentials.logindata[i] = {
                 hostname: card.card_title,
                 username: card.email,
-                password: card.password
+                password: card.password,
+                img_path: card.img_path
             };
         }
         chrome.storage.local.set({ credentials: credentials });
