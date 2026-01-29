@@ -851,8 +851,8 @@ document.getElementById("search-input").addEventListener("input", function() {
                 passwordCard.style.display = "none";
             }
         }
-        else if (searchInput.includes("email:")){
-            let emailSearch = searchInput.split("email:")[1];
+        else if (searchInput.includes("user:")){
+            let emailSearch = searchInput.split("user:")[1];
             if (userdata.password_cards[i].email.toLowerCase().includes(emailSearch)) {
                 let passwordCard = document.getElementById("preview-password-card-" + (i + 1).toString());
                 passwordCard.style.display = "flex";
